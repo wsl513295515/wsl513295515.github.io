@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS-BLOCK-LAYOUT</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        .first{
+            background: #000;
+            color: white;
+        }
+        .first p{
+            width: 600px;
+            margin: auto;
+        }
+        .text{
+            width: 600px;
+            margin: auto;
+            margin-top: 15px;
+            margin-bottom: 16px;
+        }
+        .form{
+            width: 600px;
+            margin: auto;
+        }
+        .form p{
+            border: 3px solid black ;
+            width: 180px;
+            height: 40px;
+            background-color: pink;
+            text-align: center;
+            line-height: 34px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            margin-right: 30px;
+            margin-top: 15px;
+        }
+        .form p:nth-of-type(3n+2){
+            margin-top: -55px;
+            margin-left: 210px;
+        }
+        .form p:nth-of-type(3n+3){
+            margin-top: -55px;
+            margin-left: 420px;
+        }
+        .link{
+            width: 600px;
+            margin: auto;
+            margin-bottom: 16px;
+        }
+        .link p{
+            box-sizing: border-box;
+            border-bottom: 1px dotted;
+            margin: 0;
+        }
+   
+        .bottom {
+            text-align: center;
+            margin: auto;
+            background: violet;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <p>hello world 请调整浏览器窗口大小查看效果</p>
+    </div>
+    <p class="text">页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
+    <div class="form">
+        <p>宽180高40(包含边框)</p>
+        <p>产品</p>
+        <p>产品</p>
+        <p>水平间隙30px</p>
+        <p>产品</p>
+        <p>产品</p>
+        <p>垂直间隙15px</p>
+        <p>产品</p>
+        <p>产品</p>
+        <p>边框宽度3px</p>
+        <p>产品</p>
+        <p>产品</p>
+    </div>
+    <div class="link">
+        <div>
+            <p>link</p>
+            <p>link</p>
+            <p>link</p>
+            <p>link</p>
+        </div>
+        link
+    </div>
+    <div class="bottom">
+        <p>
+            ©版权所有
+        </p>
+        <p>
+            本页所有布局均使用块元素
+        </p>        
+                
+        
+    </div>
+</body>
+</html>
