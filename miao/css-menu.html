@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body>div {
+            position: relative;
+            overflow: hidden;
+            background-image: url(https://i1.mifile.cn/a4/xmad_15566146318197_mAghl.jpg);
+
+            background-size: 100% 100%;
+            width: 1230px;
+            height: 490px;
+            margin: 85px;
+        }
+
+        li {
+
+            line-height: 45px;
+            background-color: rgba(80, 80, 80, 0.9);
+            color: white;
+            font-size: 14px;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+            text-align: left;
+            padding-left: 30px;
+
+        }
+
+        li:hover {
+            background-color: #ff6700;
+        }
+
+        .menu>li {
+            background-color: rgba(80, 80, 80, 0.9);
+        }
+
+        .menu>li:hover {
+            background-color: #ff6700;
+        }
+
+        .menu>li>ul>li {
+            background-color: rgba(80, 80, 80, 0.9);
+        }
+
+        .menu>li>ul>li:hover {
+            background-color: #ff6700;
+        }
+
+        ul {
+            width: 250px;
+        }
+
+        .menu {
+            list-style-type: none;
+            text-align: center;
+            margin: 20px 0 20px 0;
+        }
+
+        .phone {
+            list-style-type: none;
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            left: 250px;
+            display: none;
+        }
+
+        .menu li:nth-of-type(1):hover .phone {
+            display: block;
+        }
+
+        .m9 {
+            list-style-type: none;
+            text-align: center;
+            position: absolute;
+            top: 0px;
+            left: 250px;
+            display: none;
+        }
+
+        .m8 {
+            list-style-type: none;
+            text-align: center;
+            position: absolute;
+            top: 45px;
+            left: 250px;
+            display: none;
+        }
+
+        .mcard {
+            list-style-type: none;
+            text-align: center;
+            position: absolute;
+            top: 90px;
+            left: 250px;
+            display: none;
+        }
+
+        .phone li:nth-of-type(1):hover .m9 {
+            display: block;
+        }
+
+        .phone li:nth-of-type(2):hover .m8 {
+            display: block;
+        }
+
+        .phone li:nth-of-type(3):hover .mcard {
+            display: block;
+        }
+
+        .tv {
+            list-style-type: none;
+            text-align: center;
+            position: absolute;
+            top: 65px;
+            left: 250px;
+            display: none;
+        }
+
+        .menu>li:nth-child(2):hover .tv {
+            display: block;
+        }
+
+        .tv4 {
+            list-style-type: none;
+            text-align: center;
+            position: absolute;
+            top: 0px;
+            left: 250px;
+            display: none;
+        }
+
+        .tvmural {
+            list-style-type: none;
+            text-align: center;
+            position: absolute;
+            top: 45px;
+            left: 250px;
+            display: none;
+        }
+
+        .projector {
+            list-style-type: none;
+            text-align: center;
+            position: absolute;
+            top: 90px;
+            left: 250px;
+            display: none;
+        }
+
+        .tv li:nth-of-type(1):hover .tv4 {
+            display: block;
+        }
+
+        .tv li:nth-of-type(2):hover .tvmural {
+            display: block;
+        }
+
+        .tv li:nth-of-type(3):hover .projector {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul class="menu">
+            <li>手机 电话卡
+                <ul class="phone">
+                    <li>小米 9
+                        <ul class="m9">
+                            <li>256G</li>
+                            <li>128G</li>
+                        </ul>
+                    </li>
+                    <li>小米 8
+                        <ul class="m8">
+                            <li>128G</li>
+                            <li>64G</li>
+                        </ul>
+                    </li>
+                    <li>小米卡
+                        <ul class="mcard">
+                            <li>通话卡</li>
+                            <li>流量卡</li>
+                        </ul>
+                    </li>
+                </ul>
+                </label>
+            </li>
+            <li>电视 盒子
+                <ul class="tv">
+                    <li>小米电视4
+                        <ul class="tv4">
+                            <li>小米电视4A</li>
+                            <li>小米电视4C</li>
+                        </ul>
+                    </li>
+                    <li>小米壁画电视
+                        <ul class="tvmural">
+                            <li>65寸</li>
+                            <li>60寸</li>
+                        </ul>
+                    </li>
+                    <li>小米投影电视
+                        <ul class="projector">
+                            <li>黑色</li>
+                            <li>白色</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>笔记本 平板</li>
+            <li>家电 插线板</li>
+            <li>出行 穿戴</li>
+            <li>智能 路由器</li>
+            <li>电源 配件</li>
+            <li>健康 儿童</li>
+            <li>耳机 音箱</li>
+            <li>生活 箱包</li>
+        </ul>
+    </div>
+</body>
+
+</html>

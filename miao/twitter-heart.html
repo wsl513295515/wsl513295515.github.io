@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .hover{
+            xborder: 1px solid;
+            width:100px;
+            height:100px;
+            background-image: url("b.png");
+            background-position: 0 0;
+            
+            }
+        .hover:hover{
+            background-position: -2800px 0px;
+            transition: background-position 1.5s steps(28);
+            }
+        .check{
+            border: 1px solid;
+            width:100px;
+            height:100px;
+            background-image: url("b.png");
+            background-position: 0 0;
+        }
+        input:checked + div{
+            background-position: -2800px 0px;
+            transition: background-position 1.5s steps(28);
+        }
+    </style>
+</head>
+<body>
+    <div class="hover"></div>
+    <div>
+        <label for="box1">
+            <input type="checkbox" id="box1" hidden>
+            <div class="check"></div>
+        </label>
+    </div>
+</body>
+</html>

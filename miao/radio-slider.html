@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        html,body{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content,.slider{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .content , .indicators{
+            z-index: 5;
+        }
+        li{
+            line-height: 42px;
+            background-color: rgba(80, 80, 80, 0.9);
+            color: white;
+            font-size: 14px;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+            text-align: left;
+            text-indent: 30px;
+            padding: 0;
+            height: 42px;
+        }
+        li:hover{
+            background-color: #ff6700;
+        } 
+            
+        ul{
+            list-style-type: none;
+            width: 234px;
+            padding: 0px;
+            margin-top: 50px;
+        }
+        li:hover > ul{
+            display: block;
+        }
+        ul ul{
+            position: absolute;
+            left: 234px;
+            margin-top: -42px;
+            display: none;
+        }
+        div ul ::before{
+            content: " > ";
+            position: absolute;
+            left: 180px;
+        }
+        .slider img{
+            position: absolute;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            transition: 1s;
+        }
+        .slider input:checked + img{
+            opacity: 1;
+        }
+        .slider input{
+            display: none;
+        }
+        .indicators{
+            position: absolute;
+            top: 480px;
+            right:270px;
+        }
+        .indicators label{
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border: 1px solid;
+            border-radius: 7px;
+        }
+        .indicators label:active{
+            color: #00000050;
+        }
+        #i1:checked ~ div #l1,#i2:checked ~ div #l2,#i3:checked ~ div #l3,#i4:checked ~ div #l4,#i5:checked ~ div #l5{
+            background-color: rgba(80, 80, 80, 0.4)
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <ul>
+            <li>手机 电话卡
+                <ul>
+                    <li>小米 9
+                        <ul>
+                            <li>256G</li>
+                            <li>128G</li>
+                        </ul>
+                    </li>
+                    <li>小米 8
+                        <ul>
+                            <li>128G</li>
+                            <li>64G</li>
+                        </ul>
+                    </li>
+                    <li>小米卡
+                        <ul>
+                            <li>通话卡</li>
+                            <li>流量卡</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>电视 盒子
+                <ul>
+                    <li>小米电视4
+                        <ul>
+                            <li>小米电视4A</li>
+                            <li>小米电视4C</li>
+                        </ul>
+                    </li>
+                    <li>小米壁画电视
+                        <ul>
+                            <li>65寸</li>
+                            <li>60寸</li>
+                        </ul>
+                    </li>
+                    <li>小米投影电视
+                        <ul>
+                            <li>黑色</li>
+                            <li>白色</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+       
+            <li>笔记本 平板
+                <ul>
+                    <li><img src="https://i1.mifile.cn/f/i/g/bijiben80.jpg?width=80&height=80" alt="" width="42px" height="42px" >小米笔记本 </li>
+                    <li>小米平板</li>
+                    <li>键盘</li>
+                </ul>
+            </li>
+            <li>家电 插线板
+                <ul>
+                    <li>米家空调</li>
+                    <li>扫地机器人</li>
+                    <li>净水器</li>
+                </ul>
+            </li>
+            <li>出行 穿戴
+                <ul>
+                    <li>VR</li>
+                    <li>平衡车</li>
+                    <li>智能记录仪</li>
+                </ul>
+            </li>
+            <li>智能 路由器
+                <ul>
+                    <li>路由器</li>
+                    <li>智能门锁</li>
+                    <li>摄像机</li>
+                </ul>
+            </li>
+            <li>电源 配件
+                <ul>
+                    <li>数据线</li>
+                    <li>手机壳</li>
+                    <li>电池</li>
+                </ul>
+            </li>
+            <li>健康 儿童
+                <ul>
+                    <li>剃须刀</li>
+                    <li>吹风机</li>
+                    <li>体重秤</li>
+                </ul>
+            </li>
+            <li>耳机 音箱
+                <ul>
+                    <li>线控耳机</li>
+                    <li>蓝牙耳机</li>
+                    <li>小爱音箱</li>
+                </ul>
+            </li>
+            <li>生活 箱包
+                <ul>
+                    <li>钱包</li>
+                    <li>服饰</li>
+                    <li>眼镜</li>
+                </ul>
+            </li>
+         </ul>
+    </div>
+    <div class="slider">
+        <input checked type="radio" name="background" id="i1">
+        <img src="https://i1.mifile.cn/a4/xmad_15566146318197_mAghl.jpg" alt="">
+        <input type="radio" name="background" id="i2">
+        <img src="https://i1.mifile.cn/a4/xmad_15529884424562_HKYaG.jpg" alt="">
+        <input type="radio" name="background" id="i3">
+        <img src="https://i1.mifile.cn/a4/xmad_15579184778872_ECdvK.jpg" alt="">
+        <input type="radio" name="background" id="i4">
+        <img src="https://i1.mifile.cn/a4/xmad_15548066591437_Stxlj.jpg" alt="">
+        <input type="radio" name="background" id="i5">
+        <img src="https://i1.mifile.cn/a4/xmad_15476942061027_STEvM.jpg" alt="">
+        <div class="indicators">
+            <label for="i1" id="l1"></label>
+            <label for="i2" id="l2"></label>
+            <label for="i3" id="l3"></label>
+            <label for="i4" id="l4"></label>
+            <label for="i5" id="l5"></label>
+        </div>
+    </div>
+</body>
+</html>
