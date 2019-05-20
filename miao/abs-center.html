@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>abs-center</title>
+    <style>
+    *{
+        margin: 0;
+        height: 100%;
+    }
+    html,body,div{
+        position: relative;
+    }
+    div{
+        text-align: center;
+        height: 100%    ;
+    }
+    .for-position{
+        border: 1px solid;
+        box-sizing: border-box;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: calc((100% - 200px) /2);
+        left: calc((100% - 200px) /2);
+    }
+    .for-block{
+        display: inline-block;
+        box-sizing: border-box;
+        width: 150px;
+        height: 150px;
+        border: 1px solid blue;
+        xvertical-align: middle;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin:auto;
+        
+     }
+    </style>
+</head>
+<body>
+    <div class="for-position"></div>
+    <div class="aaa">
+        <span class="for-block"></span>
+    </div>
+</body>
+</html>
