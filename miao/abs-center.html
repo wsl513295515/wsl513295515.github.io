@@ -8,14 +8,15 @@
     <style>
     *{
         margin: 0;
-        height: 100%;
+        padding: 0;
     }
     html,body,div{
+        width: 100%;
+        height: 100%;
         position: relative;
-    }
-    div{
-        text-align: center;
-        height: 100%    ;
+        xtext-align: center;
+        xvertical-align: middle;
+        xline-height: 150px;
     }
     .for-position{
         border: 1px solid;
@@ -26,27 +27,26 @@
         top: calc((100% - 200px) /2);
         left: calc((100% - 200px) /2);
     }
-    .for-block{
+    .for-inlink{
         display: inline-block;
         box-sizing: border-box;
         width: 150px;
         height: 150px;
         border: 1px solid blue;
-        xvertical-align: middle;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin:auto;
-        
+        vertical-align: middle;
+        xtext-align: center;
+        xline-height: 150px;
      }
+    .aaa{
+        xvertical-align: middle;
+        text-align: center;
+        line-height: 100%;
+    }
+
     </style>
 </head>
 <body>
     <div class="for-position"></div>
-    <div class="aaa">
-        <span class="for-block"></span>
-    </div>
+    <div class="aaa">aaa<span class="for-inlink">bbb</span>ccc</div>
 </body>
 </html>
