@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>radio-slider</title>
     <style>
-        
-        html,body{
+        html,body {
             margin: 0;
-            
             position: absolute;
         }
-        .slider{
+
+        .slider {
             width: 1230px;
             height: 463px;
             position: absolute;
             margin: 80px auto auto 70px;
         }
-        .content{
-            xwidth: 1230px;
-            xheight: 463px;
+
+        .content {
             position: absolute;
             top: 50px;
             margin-left: 70px;
         }
-        li{
+
+        li {
             line-height: 42px;
             background-color: rgba(80, 80, 80, 0.8);
             color: white;
@@ -33,119 +33,131 @@
             font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
             text-align: left;
             text-indent: 30px;
-            xmargin-bottom: -15px;
-        }
-        li:hover{
+            }
+
+        li:hover {
             background-color: #ff6700;
-        } 
-        li img{
-            width: 42px ;
-            height: 42px; 
+        }
+
+        li img {
+            width: 42px;
+            height: 42px;
             vertical-align: -16px;
-        }    
-        ul{
+        }
+
+        ul {
             list-style-type: none;
             width: 234px;
             padding: 0px;
             margin-top: 50px;
         }
-        li:hover > ul{
+
+        li:hover>ul {
             display: block;
         }
-        ul ul{
+
+        ul ul {
             position: absolute;
             left: 234px;
             margin-top: -42px;
             display: none;
         }
-        div ul li ul::before{
+
+        div ul li ul::before {
             content: " > ";
             position: absolute;
             right: 240px;
-            
+
         }
-        .slider img{
+
+        .slider img {
             position: absolute;
             top: 0;
             opacity: 0;
             width: 100%;
             transition: 1s;
         }
-        .slider input:checked + img{
+
+        .slider input:checked+img {
             opacity: 1;
         }
-        .slider input{
+
+        .slider input {
             display: none;
         }
-        .indicators{
+
+        .indicators {
             position: absolute;
             top: 480px;
-            right:270px;
+            right: 270px;
         }
-        .indicators label{
+
+        .indicators label {
             display: inline-block;
             width: 7px;
             height: 7px;
             border: 1px solid;
             border-radius: 7px;
         }
-        .button{
+
+        .button {
             position: absolute;
             top: 200px;
-            
+
         }
-        .button label{
+
+        .button label {
             width: 45px;
             height: 45px;
             border-radius: 50px;
-            border: 1px solid;
-            xbackground-color: #00000099;
-            
+            border: 1px solid transparent;
+            background-color: #00000033;
+            display: none;
         }
-        #i1:checked ~ div #la2,
-        #i2:checked ~ div #la3,
-        #i3:checked ~ div #la4,
-        #i4:checked ~ div #la5,
-        #i5:checked ~ div #la1{
-            xbackground-color: rgba(80, 80, 80, 0.2);
+
+        #i1:checked~div #la2,
+        #i2:checked~div #la3,
+        #i3:checked~div #la4,
+        #i4:checked~div #la5,
+        #i5:checked~div #la1 {
             display: block;
             position: absolute;
             left: 0;
             left: 1150px;
             top: 0;
-            
         }
-        /* ???????????????????????????? */
-        #i1:checked ~ div #la5,
-        #i2:checked ~ div #la1,
-        #i3:checked ~ div #la2,
-        #i4:checked ~ div #la3,
-        #i5:checked ~ div #la4{
-            xbackground-color: rgba(80, 80, 80, 0.2);
+
+        #i1:checked~div #la5,
+        #i2:checked~div #la1,
+        #i3:checked~div #la2,
+        #i4:checked~div #la3,
+        #i5:checked~div #la4 {
             display: block;
             position: absolute;
             left: 250px;
             top: 0;
-            
         }
-        /* #i1:checked  */
-        .indicators label:active{
+
+        .indicators label:active {
             color: #00000050;
         }
-        .button label:active{
+
+        .button label:active {
             color: #00000050;
         }
-        #i1:checked ~ div #l1,
-        #i2:checked ~ div #l2,
-        #i3:checked ~ div #l3,
-        #i4:checked ~ div #l4,
-        #i5:checked ~ div #l5{
-            background-color: rgba(80, 80, 80, 0.4)
+
+        #i1:checked~div #l1,#i1:hover~div #la1,
+        #i2:checked~div #l2,#i2:hover~div #la2,
+        #i3:checked~div #l3,#i3:hover~div #la3,
+        #i4:checked~div #l4,#i4:hover~div #la4,
+        #i5:checked~div #l5,#i5:hover~div #la5{
+            background-color: #00000077;
         }
     </style>
 </head>
+
 <body>
-    
+
     <div class="slider">
         <input checked type="radio" name="background" id="i1">
         <img src="https://i1.mifile.cn/a4/xmad_15566146318197_mAghl.jpg" alt="">
@@ -218,10 +230,10 @@
                     </li>
                 </ul>
             </li>
-       
+
             <li>笔记本 平板
                 <ul>
-                    <li><img src="https://i1.mifile.cn/f/i/g/bijiben80.jpg?width=80&height=80" alt="" >小米笔记本 </li>
+                    <li><img src="https://i1.mifile.cn/f/i/g/bijiben80.jpg?width=80&height=80" alt="">小米笔记本 </li>
                     <li>小米平板</li>
                     <li>键盘</li>
                 </ul>
@@ -275,7 +287,8 @@
                     <li>眼镜</li>
                 </ul>
             </li>
-         </ul>
+        </ul>
     </div>
 </body>
+
 </html>
