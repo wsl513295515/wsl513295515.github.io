@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        .first .table {
+            table-layout:fixed;
+            width: 730px;
+            height: 230px;
+            border-collapse: collapse;
+            margin: 150px;
+            text-align: left;
+        }
+        .first td,
+        .first th{
+            border-top: 1px solid #dee2e6;
+        }
+        .first th[scope="col"]{
+            border-bottom: #dee2e6 2px solid;
+            height: 3em;
+        }
+        .first .a{
+            width: 110px;
+        }
+        /* table-dark */
+        .first .table-dark{
+            background-color: #343a40;
+            color: #fff;
+        }
+        .first .table-dark tr td,
+        .first .table-dark tr th{
+            border-color: #454d55;
+        }
+        .first .table-dark tr th[scope="col"]{
+            border-color: #454d55;
+        }
+        /* thead-light & thead-dark*/
+        .first .thead-light{
+            background-color: #e9ecef;
+        }
+        .first .thead-light th{
+            color: #495057;
+        }
+        .first .thead-dark{
+            background-color: #343a40;
+            color: #fff;
+        }
+        /* table-striped */
+        .first .table-striped tbody tr:nth-of-type(2n + 1){
+            background-color: #f2f2f2;
+        }
+        .first .table-striped.table-dark tbody tr:nth-of-type(2n + 1){
+            background-color: #3e444a;
+        }
+        /* table-bordered */
+        .first .table-bordered td,
+        .first .table-bordered th{
+            border: 1px solid #dee2e6;
+        }
+        .first .table-bordered th[scope="col"]{
+            border-bottom: #dee2e6 2px solid;
+        }
+        /* table-borderless */
+        .first .table-borderless td,
+        .first .table-borderless th{
+            border: none;
+        }
+        /* table-hover */
+        .first tbody tr:hover{
+            background-color: #ececec;
+        }
+        .first .table-dark tbody tr:hover{
+            background-color: #43494e;
+        }
+        /* table-small */
+        .first .table-small th{
+            height: 1em;
+        }
+        .first .table-small {
+            height: 115px;
+        }
+        /* caption */
+        .first caption{
+            caption-side: bottom;
+            text-align: left;
+        }
+        /* second */
+        .second table{
+            width: 780px;
+            height: 540px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 150px;
+            text-align: left;
+        }
+        .second th[scope="col"]{
+            border-top: #dee2e6 1px solid;
+            height: 3em;
+        }
+        .second .table-active{
+            border-top: 1px solid #dee2e6;
+            background-color: #dee2e6;
+        }
+        .second .table-primary{
+            border-top: 1px solid #7abaff;
+            background-color: #b8daff;
+        }
+        .second .table-secondary{
+            border-top: 1px solid #b3b7bb;
+            background-color: #d6d8d8;
+        }
+        .second .table-success{
+            border-top: 1px solid #8fd19e;
+            background-color: #c3e6cb;
+        }
+        .second .table-danger{
+            border-top: 1px solid #ed969e;
+            background-color: #f5c6cb;
+        }
+        .second .table-warning{
+            border-top: 1px solid #ffdf7e;
+            background-color: #ffeeba;
+        }
+        .second .table-info{
+            border-top: 1px solid #86cfda;
+            background-color: #bee5eb;
+        }
+        .second .table-light{
+            border-top: 1px solid #dee5eb;
+            background-color: #fdfdfe;
+        }
+        .second .table-dark{
+            border-top: 1px solid #454d55;
+            background-color: #c6c8ca;
+        }
+        /* third */
+        .third table{
+            display: block;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 150px;
+            text-align: center;
+            border: 1px solid;
+            overflow: auto;
+        }
+        .third td{
+            width: 20px;
+            height: 10px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">
+        <table class="table ">
+            <caption>List of users</caption>
+            <col class="a">
+            <col class="b">
+            <col class="c">
+            <col class="d">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="second">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-active">
+                    <th>Active</th>
+                    <td class="table-active">Cell</td>
+                    <td class="table-active">Cell</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr class="table-primary">
+                    <th>Primary</th>
+                    <td class="table-primary">Cell</td>
+                    <td class="table-primary">Cell</td>
+                </tr>
+                <tr class="table-secondary">
+                    <th>Secondary</th>
+                    <td class="table-secondary">Cell</td>
+                    <td class="table-secondary">Cell</td>
+                </tr>
+                <tr class="table-success">
+                    <th>Success</th>
+                    <td  class="table-success">Cell</td>
+                    <td  class="table-success">Cell</td>
+                </tr>
+                <tr class="table-danger">
+                    <th>Danger</th>
+                    <td class="table-danger">Cell</td>
+                    <td class="table-danger">Cell</td>
+                </tr>
+                <tr class="table-warning">
+                    <th>Warning</th>
+                    <td class="table-warning">Cell</td>
+                    <td class="table-warning">Cell</td>
+                </tr>
+                <tr class="table-info">
+                    <th>Info</th>
+                    <td class="table-info">Cell</td>
+                    <td class="table-info">Cell</td>
+                </tr>
+                <tr class="table-light">
+                    <th>Light</th>
+                    <td class="table-light">Cell</td>
+                    <td class="table-light">Cell</td>
+                </tr>
+                <tr class="table-dark">
+                    <th>Dark</th>
+                    <td class="table-dark">Cell</td>
+                    <td class="table-dark">Cell</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="third">
+        <table>
+            <tbody>
+                <tr>
+                    <td>0100000000000</td>
+                    <td>0200000000000</td>
+                    <td>0300000000000</td>
+                    <td>0400000000000</td>
+                    <td>0500000000000</td>
+                    <td>0600000000000</td>
+                    <td>0700000000000</td>
+                    <td>0800000000000</td>
+                    <td>0900000000000</td>
+                    <td>1000000000000</td>
+                    <td>1100000000000</td>
+                    <td>1200000000000</td>
+                    <td>1300000000000</td>
+                    <td>1400000000000</td>
+                    <td>1500000000000</td>
+                    <td>1600000000000</td>
+                    <td>1700000000000</td>
+                    <td>1800000000000</td>
+                    <td>1900000000000</td>
+                    <td>2000000000000</td>
+                </tr>
+                <tr>
+                    <td>0100000000000</td>
+                    <td>0200000000000</td>
+                    <td>0300000000000</td>
+                    <td>0400000000000</td>
+                    <td>0500000000000</td>
+                    <td>0600000000000</td>
+                    <td>0700000000000</td>
+                    <td>0800000000000</td>
+                    <td>0900000000000</td>
+                    <td>1000000000000</td>
+                    <td>1100000000000</td>
+                    <td>1200000000000</td>
+                    <td>1300000000000</td>
+                    <td>1400000000000</td>
+                    <td>1500000000000</td>
+                    <td>1600000000000</td>
+                    <td>1700000000000</td>
+                    <td>1800000000000</td>
+                    <td>1900000000000</td>
+                    <td>2000000000000</td>
+                </tr>
+                <tr>
+                    <td>0100000000000</td>
+                    <td>0200000000000</td>
+                    <td>0300000000000</td>
+                    <td>0400000000000</td>
+                    <td>0500000000000</td>
+                    <td>0600000000000</td>
+                    <td>0700000000000</td>
+                    <td>0800000000000</td>
+                    <td>0900000000000</td>
+                    <td>1000000000000</td>
+                    <td>1100000000000</td>
+                    <td>1200000000000</td>
+                    <td>1300000000000</td>
+                    <td>1400000000000</td>
+                    <td>1500000000000</td>
+                    <td>1600000000000</td>
+                    <td>1700000000000</td>
+                    <td>1800000000000</td>
+                    <td>1900000000000</td>
+                    <td>2000000000000</td>
+                </tr>
+                <tr>
+                    <td>0100000000000</td>
+                    <td>0200000000000</td>
+                    <td>0300000000000</td>
+                    <td>0400000000000</td>
+                    <td>0500000000000</td>
+                    <td>0600000000000</td>
+                    <td>0700000000000</td>
+                    <td>0800000000000</td>
+                    <td>0900000000000</td>
+                    <td>1000000000000</td>
+                    <td>1100000000000</td>
+                    <td>1200000000000</td>
+                    <td>1300000000000</td>
+                    <td>1400000000000</td>
+                    <td>1500000000000</td>
+                    <td>1600000000000</td>
+                    <td>1700000000000</td>
+                    <td>1800000000000</td>
+                    <td>1900000000000</td>
+                    <td>2000000000000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
