@@ -12,30 +12,38 @@
         html,body,div{
             height: 100%;
         }
+        div{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
         header{
-            float: left;
             width: 100%;
             height: 67px;
-            background-color: #474c50;
-        }
-        aside{
-            float: left;
-            width: 187px;
-            height: calc(100% - 67px);
-            background-color: #dfe1e3;
+            background-color: #44484c;
         }
         main{
-            float: left;
-            width: calc(100% - 187px);
-            height: calc(100% - 67px);
+            display: flex;
+            flex-grow: 1;
+        }
+        aside{
+            width: 188px;
+            background-color: #dfe1e3;
+        }
+        section{
+            background-color: pink;
+            flex-grow: 1;
         }
     </style>
 </head>
 <body>
     <div>
         <header></header>
-        <aside></aside>
-        <main></main>
+        <main>
+            <aside>
+            </aside>
+            <section></section>
+        </main>
     </div>
 </body>
 </html>

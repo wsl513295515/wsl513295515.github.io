@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            margin: 70px;
+            box-shadow: 0 0 15px #000;
+            border-radius: 80px;
+            background:#0003 center url("https://cssanimation.rocks/images/posts/clocks/ios_clock.svg") no-repeat;
+            position: relative;
+            background-size: 85%;
+        }
+        div::after{
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        article{
+            transform-origin: center;
+            animation: rotate 60s infinite steps(60,end);
+            width: 500px;
+            height: 500px;
+        }
+        section{
+            position: absolute;
+        }
+        .second{
+            width: 500px;
+            height: 500px;
+            transform-origin: center;
+            animation: min 1s  forwards  infinite;
+        }
+        .second::after{
+            content: '';
+            display: block;
+            width: 10px;
+            height: 225px;
+            background-color: #a00;
+            clip-path: polygon(20% 0,80% 0,100% 100%,0 100%);
+            position: relative;
+            left: calc(50% - 5px);
+            top: 70px;
+        }
+        .minute{
+            width: 500px;
+            height: 500px;
+            transform-origin: center;
+            animation: rotate 3600s infinite linear;
+        }
+        .minute::after{
+            content: '';
+            display: block;
+            width: 15px;
+            height: 175px;
+            background-color: #0aa;
+            clip-path: polygon(20% 0,80% 0,100% 100%,0 100%);
+            position: relative;
+            left: calc(50% - 7.5px);
+            top: 110px;
+        }
+        .hour{
+            width: 500px;
+            height: 500px;
+            transform-origin: center;
+            animation: rotate 43200s infinite linear;
+        }
+        .hour::after{
+            content: '';
+            display: block;
+            width: 20px;
+            height: 145px;
+            background-color: #00a;
+            clip-path: polygon(20% 0,80% 0,100% 100%,0 100%);
+            position: relative;
+            left: calc(50% - 10px);
+            top: 130px;
+        }
+        @keyframes rotate {
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+        @keyframes min {
+            from{
+                transform: rotateZ( 0deg);
+            }
+            20% {
+                transform: rotateZ( 0.3deg);
+            }
+            10% {
+                transform: rotateZ(-0.3deg);
+            }
+            30% {
+                transform: rotateZ(0deg);
+            }
+            TO {
+                transform: rotateZ(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <section class="hour"></section>
+        <section class="minute"></section>
+        <article>
+        <section class="second"></section>
+        </article>
+    </div>
+</body>
+</html>

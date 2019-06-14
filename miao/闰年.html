@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function year(y){
+            console.log(y % 4 === 0 ? 'ture' : 'false');
+        }
+        year(2019)
+
+        function sum(n){
+            if (n === 1){
+                return 1;
+            }
+            else{
+                return sum(n - 1) + n;
+            }
+        }
+        console.log(sum(100));
+
+        function sum1(n){
+            console.log( (n * n + n) / 2);
+        }
+        sum1(50);
+
+        function prime(n){
+            if(n % 2 === 0 && n / 2 !== 1 ){
+                return false;
+            }
+            if(n % 3 === 0 && n / 3 !== 1 ){
+                return false;
+            }
+            if(n % 5 === 0 && n / 5 !== 1 ){
+                return false;
+            }
+            if(n === 1 ){
+                return false;
+            }
+            else{
+                return true;
+            }
+            
+        }
+        console.log(prime(2));
+
+        console.log(
+            ":\")hello:-\\\\world"
+        )
+        
+        var q = '';
+        while (q.length < 7){
+            q = q + '#';
+            console.log(q);
+        }
+
+        for(var num = 1; num <= 100; num++){
+            if (num % 5 === 0 && num % 3 === 0)
+                console.log('FizzBuzz');
+            else if (num % 3 === 0)
+                console.log('Fizz');
+            else if (num % 5 === 0 && num % 3 !== 0)
+                console.log('Buzz');
+            else
+                console.log(num);
+        }
+          
+        console.log(
+            '# # # #\n # # # #\n# # # #\n # # # #\n# # # #\n # # # #\n# # # #\n # # # #\n'
+            );
+
+        console.log(Math.floor(5 / 2))
+
+        var size = 8
+        var c = ''
+        var r = ''
+        var h = ''
+        
+        if (size % 2 == 0){
+            while(c.length < size){
+                c = c + '# '
+                r = r + ' #'
+            }
+                b = c + '\n' + r + '\n'
+            while((h.length - size) < (size* size)){
+                h = h + b
+            }
+                console.log(h)
+        }        
+        else{
+            while(c.length < (size - 1)){
+                c = c + '# '
+                r = r + ' #'
+            }
+                b = c + '#\n' + r + ' \n'
+            while((h.length - (size - 1)) < (size - 1)*(size - 1)){
+                h = h + b
+            }
+                console.log(h + c+ '#\n')
+        }
+
+        // var a = +prompt('请输入a的值:')
+        // var b = +prompt('请输入b的值:')
+        // var c = +prompt('请输入c的值:')
+        // var delta = b * b - 4 * a *c
+        // if (delta == 0)
+    </script>
+</body>
+</html>

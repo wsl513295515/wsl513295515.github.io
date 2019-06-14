@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        div{
+            margin: 120px;
+            width: 400px;
+            height: 400px;
+            transform-origin: center;
+            animation: rotate 12s infinite linear;
+        }
+        section{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid;
+            transform-origin: center;
+            animation: unrotate 12s infinite linear;
+            position: relative;
+        }
+        section::after{
+            content: '';
+            display: block;
+            width: 17px;
+            height: 17px;
+            border: 1px solid;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        @keyframes rotate{
+            to{
+                transform: rotatez(360deg);
+            }
+        }
+        @keyframes unrotate{
+            to{
+                transform: rotatez(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <section></section>
+    </div>
+</body>
+</html>
