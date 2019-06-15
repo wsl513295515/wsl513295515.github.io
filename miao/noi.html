@@ -169,8 +169,8 @@
         }
     </script>
     <script type="x" id="ch0104/04">
-        var n = prompt('Pick a number','')
-        var a = n.charCodeAt(0)
+        var n = String(prompt())
+        var a = n.charCodeAt()
         if(a % 2 ===1){
             console.log('Yes')
         }else{
@@ -264,7 +264,7 @@
     <script type="x" id="ch0104/13">
         var n = Number(prompt('Pick a number',''))
         if (n >= 0 && n < 5){
-            console.log((n + 2.5).toFixed(3))
+            console.log((-n + 2.5).toFixed(3))
         }else if (n >= 5 && n < 10){
             console.log((2 - 1.5 * (x - 3) * (x - 3)).toFixed(3))
         }else if (n >= 10 && n < 20){
@@ -348,7 +348,7 @@
             console.log('Invalid operator!')
         }
     </script>
-    <script type="" id="ch0104/20">
+    <script type="x" id="ch0104/20">
         var a = Number(prompt('Pick a number',''))
         var b = Number(prompt('Pick a number',''))
         var c = Number(prompt('Pick a number',''))
