@@ -142,5 +142,230 @@
         var a = 2**n
         console.log(a)
     </script>
+    <script type="x" id="ch0104/01">
+        var n = Number(prompt('Pick a number',''))
+        if(n > 0){
+            console.log('positive')
+        }else if(n === 0){
+                console.log('zero')
+        }else {
+                console.log('negative')
+        }
+    </script>
+    <script type="x" id="ch0104/02">
+        var n = Number(prompt('Pick a number',''))
+        if(n >= 0){
+            console.log(n.toFixed(2))
+        }else{
+            console.log(-n.toFixed(2))
+        }
+    </script>
+    <script type="x" id="ch0104/03">
+        var n = Number(prompt('Pick a number',''))
+        if(n % 2 ===0){
+            console.log('even')
+        }else{
+            console.log('odd')
+        }
+    </script>
+    <script type="x" id="ch0104/04">
+        var n = prompt('Pick a number','')
+        var a = n.charCodeAt(0)
+        if(a % 2 ===1){
+            console.log('Yes')
+        }else{
+            console.log('No')
+        }
+    </script>
+    <script type="x" id="ch0104/05">
+        var x = Number(prompt('Pick a number',''))
+        var y = Number(prompt('Pick a number',''))
+        if(x > y){
+            console.log('>')
+        }else if(x === y){
+                console.log('=')
+        }else {
+               
+        }
+    </script>
+    <script type="x" id="ch0104/06">
+        var x = Number(prompt('Pick a number',''))
+        if(x >= 10 && x <= 99){
+            console.log('1')
+        }else{
+            console.log('0')
+        }
+
+    </script>
+    <script type="x" id="ch0104/07">
+        var x = Number(prompt('Pick a number',''))
+        var y = Number(prompt('Pick a number',''))
+        if(x >= 10 || y >= 20){
+            console.log('1')
+        }else{
+            console.log('0')
+        }
+    </script>
+    <script type="x" id="ch0104/08">
+        var n = Number(prompt('Pick a number',''))
+        if(n % 3 === 0 && n % 5 === 0){
+            console.log('YES')
+        }else{
+            console.log('NO')
+        }
+    </script>
+    <script type="x" id="ch0104/09">
+        var n = Number(prompt('Pick a number',''))
+        if(n % 3 === 0 && n % 5 === 0 && n % 7 === 0){
+            console.log('3 5 7')
+        }else if(n % 3 === 0 && n % 5 === 0){
+            console.log('3 5')
+        }else if(n % 3 === 0 && n % 7 === 0){
+            console.log('3 7')
+        }else if(n % 5 === 0 && n % 7 === 0){
+            console.log('5 7')
+        }else if(n % 3 === 0){
+            console.log('3')
+        }else if(n % 5 === 0){
+            console.log('5')
+        }else if(n % 7 === 0){
+            console.log('7')
+        }else{
+            console.log('n')
+        }
+    </script>
+    <script type="x" id="ch0104/10">
+        var x = Number(prompt('Pick a number',''))
+        var y = Number(prompt('Pick a number',''))
+        if(( x < 60 && y >= 60) || ( y < 60 && x >= 60)){
+            console.log('1')
+        }else{
+            console.log('0')
+        }
+    </script>
+    <script type="x" id="ch0104/11">
+        var x = Number(prompt('Pick a number',''))
+        if (x === 1 || x === 3 || x === 5){
+            console.log('N0')
+        }else{
+            console.log('YES')
+        }
+    </script>
+    <script type="x" id="ch0104/12">
+        var x = Number(prompt('Pick a number',''))
+        if (x > 100){
+            console.log('Bike')
+        }else if(x === 100){
+            console.log('All')
+        }else{
+            console.log('Walk')
+        }
+    </script>
+    <script type="x" id="ch0104/13">
+        var n = Number(prompt('Pick a number',''))
+        if (n >= 0 && n < 5){
+            console.log((n + 2.5).toFixed(3))
+        }else if (n >= 5 && n < 10){
+            console.log((2 - 1.5 * (x - 3) * (x - 3)).toFixed(3))
+        }else if (n >= 10 && n < 20){
+            console.log((x / 2 - 1.5).toFixed(3))
+        }
+    </script>
+    <script type="x" id="ch0104/14">
+        var a = Number(prompt('Pick a number',''))
+        var b = String(prompt('Pick a letter',''))
+        if (b = 'y'){
+            if (a / 1000 <= 1){
+                console.log('13')
+            }else{
+                console.log((Math.ceil(a / 500)) * 4 + 5)
+            }
+        }else if (b = 'n'){
+            if (a / 1000 <= 1){
+                console.log('8')
+            }else{
+                console.log((Math.ceil(a / 500)) * 4)
+            }
+        }
+    </script>
+    <script type="x" id="ch0104/15">
+        var a = Number(prompt('Pick a number',''))
+        var b = Number(prompt('Pick a number',''))
+        var c = Number(prompt('Pick a number',''))
+        if (a > b && a > c){
+            console.log(a)
+        }else if(b > a && b > c){
+            console.log(b)
+        }else{
+            console.log(c)
+        }
+    </script>
+    <script type="x" id="ch0104/16">
+        var a = Number(prompt('Pick a number',''))
+        var b = Number(prompt('Pick a number',''))
+        var c = Number(prompt('Pick a number',''))
+        if(a + b > c && a + c > b && b + c > a){
+            console.log('yes')
+        }else{
+            console.log('no')
+            }
+    </script>
+    <script type="x" id="ch0104/17">
+        var a = Number(prompt('Pick a number',''))
+        if(a % 400 === 0 || (a % 4 ===0 && a % 100 !== 0)){
+            console.log('Y')
+        }else{
+            console.log('N')
+        }
+    </script>
+    <script type="x" id="ch0104/18">
+        var x = Number(prompt('Pick a number',''))
+        var y = Number(prompt('Pick a number',''))
+        if(x >= -1 && x <= 1 && y >= -1 && y <= 1){
+            console.log('yes')
+        }else{
+            console.log("no")
+        }
+
+    </script>
+    <script type="x" id="ch0104/19">
+        var a = Number(prompt('Pick a number',''))
+        var b = Number(prompt('Pick a number',''))
+        var c = String(prompt())
+        if(c == '+'){
+            console.log(a + b)
+        }else if(c === '-'){
+            console.log(a - b)
+        }else if(c === '*'){
+            console.log(a * b)
+        }else if(c === '/'){
+            if(b === 0){
+                console.log('Divided by zero!')
+            }else{
+            console.log(a / b)
+            }
+        }else{
+            console.log('Invalid operator!')
+        }
+    </script>
+    <script type="" id="ch0104/20">
+        var a = Number(prompt('Pick a number',''))
+        var b = Number(prompt('Pick a number',''))
+        var c = Number(prompt('Pick a number',''))
+        if(b * b === 4 * a * c){
+            console.log('x1=x2=' + (-b + Math.sqrt(b * b - 4 * a * c) / (2 * a)).toFixed(5))
+        }else if(b * b > 4 * a * c){
+            console.log('x1=' + (-b + Math.sqrt(b * b - 4 * a * c) / (2 * a)).toFixed(5) + ';x2=' + (-b - Math.sqrt(b * b - 4 * a * c) / (2 * a)).toFixed(5))
+        }else if(b * b < 4 * a * c){
+            console.log('x1=' + (-b / (2 * a)).toFixed(5) + '+' + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + 'i;x2=' + (-b / (2 * a)).toFixed(5) + '-' + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + 'i')
+        }
+    </script>
+    <script type="x" id="ch0104/21">
+        var n = Number(prompt('Pick a number',''))
+        var x = Number(prompt('Pick a number',''))
+        var y = Number(prompt('Pick a number',''))
+        var a = n - (y / x)
+        console.log(Math.floor(a))
+    </script>
 </body>
 </html>
