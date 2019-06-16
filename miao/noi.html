@@ -367,5 +367,204 @@
         var a = n - (y / x)
         console.log(Math.floor(a))
     </script>
+    <script type="x" id="ch0105/01">
+        var n = Number(prompt())
+        var sum = 0
+        var p = 1
+        while(p <= n) {
+          var i = Number(prompt())
+          sum = sum + i;
+          p ++
+        }
+        var aver = sum / n;
+        console.log(aver.toFixed(2));
+    </script>
+    <script type="x" id="ch0105/02">
+        var sur = 0
+        var mon = 1
+        while(mon <= 12){
+            var n = Number(prompt('Pick a number',''))
+            sur = sur + n
+            mon ++
+        }
+        console.log('$' + ((sur/12).toFixed(2)))
+    </script>
+    <script type="x" id="ch0105/03">
+        var n = Number(prompt('Pick a number',''))
+        var a = 1
+        var sum = 0
+        while(a <= n){
+            var x = Number(prompt('Pick a number',''))
+            sum = sum + x
+            a ++
+        }
+        console.log((sum / n).toFixed(4))
+    </script>
+    <script type="x" id="ch0105/04">
+        var n = Number(prompt('Pick a number',''))
+        var a = 1
+        var sum = 0
+        while(a <= n){
+            var x = Number(prompt('Pick a number',''))
+            sum = sum + x
+            a ++
+        }
+        console.log(sum,(sum / n).toFixed(5))
+    </script>
+    <script type="x" id="ch0105/05">
+        var n = Number(prompt('Pick a number',''))
+        var a = 0
+        var rela = 0
+        while(a < n){
+            var x = Number(prompt('Pick a number',''))
+            var max =Math.max(rela,x)
+            rela = max
+            a ++
+        }
+        console.log(rela)
+    </script>
+    <script type="x" id="ch0105/06">
+        var n = Number(prompt('Pick a number',''))
+        var x = Number(prompt('Pick a number',''))
+        if(n >= 2){
+            var a = 2
+            var y = Number(prompt('Pick a number',''))
+            var large = Math.max(x,y)
+            var small = Math.min(x,y)
+            if(n == 2){
+                console.log(large - small)
+            }else{
+                while(a < n){
+                    var z = Number(prompt('Pick a number',''))
+                    var max = Math.max(large,z)
+                    var min = Math.min(small,z)
+                    large = max
+                    small = min
+                    a ++
+                }
+                    console.log(max - min)
+            }
+        }else{
+            console.log(0)
+        }
+    </script>
+    <script type="x" id="ch0105/07">
+        var n = Number(prompt('Pick a number',''))
+        var x = 0,y = 0,z = 0
+        for (var a = 0;a < n;a ++){
+            var x1 = Number(prompt('Pick a number',''))
+            var y1 = Number(prompt('Pick a number',''))
+            var z1 = Number(prompt('Pick a number',''))
+            x = x + x1
+            y = y + y1
+            z = z + z1
+        }
+        console.log(x,y,z,(x + y + z))
+    </script>
+    <script type="x" id="ch0105/08">
+        var n = Number(prompt('Pick a number',''))
+        var sum = 0
+        for(var a = 0;a < (n - 1);a ++){
+            var x = Number(prompt('Pick a number',''))
+            sum = sum + x
+        }
+        console.log((n - 2) * 180 - sum)
+    </script>
+    <script type="x" id="ch0105/09">
+        var m = Number(prompt('Pick a number',''))
+        var n = Number(prompt('Pick a number',''))
+        var sum = 0
+        var time =n - m
+        for(var a = 0;a <= time;a ++){
+            if(m % 2 !== 0){
+                sum += m
+            }
+            m ++
+        }
+        console.log(sum)
+    </script>
+    <script type="x" id="ch0105/10">
+        var m = Number(prompt('Pick a number',''))
+        var n = Number(prompt('Pick a number',''))
+        var sum = 0
+        var time =n - m
+        for(var a = 0;a <= time;a ++){
+            if(m % 17 === 0){
+                sum += m
+            }
+            m ++
+        }
+        console.log(sum)
+    </script>
+    <script type="" id="ch0105/11">
+    </script>
+    <script type="" id="ch0105/12">
+    </script>
+    <script type="" id="ch0105/13">
+    </script>
+    <script type="" id="ch0105/14">
+    </script>
+    <script type="" id="ch0105/15">
+    </script>
+    <script type="" id="ch0105/16">
+    </script>
+    <script type="" id="ch0105/17">
+    </script>
+    <script type="" id="ch0105/18">
+    </script>
+    <script type="" id="ch0105/19">
+    </script>
+    <script type="" id="ch0105/20">
+    </script>
+    <script type="" id="ch0105/21">
+    </script>
+    <script type="" id="ch0105/22">
+    </script>
+    <script type="" id="ch0105/23">
+    </script>
+    <script type="" id="ch0105/24">
+    </script>
+    <script type="" id="ch0105/25">
+    </script>
+    <script type="" id="ch0105/26">
+    </script>
+    <script type="" id="ch0105/27">
+    </script>
+    <script type="" id="ch0105/28">
+    </script>
+    <script type="" id="ch0105/29">
+    </script>
+    <script type="" id="ch0105/30">
+    </script>
+    <script type="" id="ch0105/31">
+    </script>
+    <script type="" id="ch0105/32">
+    </script>
+    <script type="" id="ch0105/33">
+    </script>
+    <script type="" id="ch0105/34">
+    </script>
+    <script type="" id="ch0105/35">
+    </script>
+    <script type="" id="ch0105/36">
+    </script>
+    <script type="" id="ch0105/37">
+    </script>
+    <script type="" id="ch0105/38">
+    </script>
+    <script type="" id="ch0105/39">
+    </script>
+    <script type="" id="ch0105/40">
+    </script>
+    <script type="" id="ch0105/41">
+    </script>
+    <script type="" id="ch0105/42">
+    </script>
+    <script type="" id="ch0105/43">
+    </script>
+    <script type="" id="ch0105/44">
+    </script>
+    <script type="" id="ch0105/45">
+    </script>
 </body>
 </html>
