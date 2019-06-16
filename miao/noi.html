@@ -496,29 +496,157 @@
         }
         console.log(sum)
     </script>
-    <script type="" id="ch0105/11">
+    <script type="x" id="ch0105/11">
+        var k = Number(prompt('Pick a number',''))
+        var one = 0,five = 0,ten = 0
+        for(var a = 0;a < k;a ++){
+            var m = Number(prompt('Pick a number',''))
+            if(m === 1){
+                one ++
+            }else if(m === 5){
+                five ++
+            }else if(m === 10){
+                ten ++
+            }
+        }
+        console.log(one,five,ten)
     </script>
-    <script type="" id="ch0105/12">
+    <script type="x" id="ch0105/12">
+        var n = Number(prompt('Pick a number',''))
+        var m = Number(prompt('Pick a number',''))
+        var amount = 0
+        for(var a = 0;a < n;a ++){
+            var x = Number(prompt('Pick a number',''))
+            if(x === m){
+                amount ++
+            }
+        }
+        console.log(amount)
     </script>
-    <script type="" id="ch0105/13">
+    <script type="x" id="ch0105/13">
+        var a = Number(prompt('Pick a number',''))
+        var n = Number(prompt('Pick a number',''))
+        var o = 1
+        for(var z = 0;z < n;z ++){
+            o = o * a
+        }
+        console.log(o)
     </script>
-    <script type="" id="ch0105/14">
+    <script type="x" id="ch0105/14">
+        var x = Number(prompt('Pick a number',''))
+        var n = Number(prompt('Pick a number',''))
+        for(var z = 0;z < n;z ++){
+            x *= 1.001
+        }
+        console.log(x.toFixed(4))
     </script>
-    <script type="" id="ch0105/15">
+    <script type="x" id="ch0105/15">
+        var r = Number(prompt('Pick a number',''))
+        var m = Number(prompt('Pick a number',''))
+        var y = Number(prompt('Pick a number',''))
+        for(var z = 0;z < y;z ++){
+            m *= ((r / 100) + 1)
+        }
+        console.log(Math.floor(m))
     </script>
-    <script type="" id="ch0105/16">
+    <script type="x" id="ch0105/16">
+        var n = Number(prompt('Pick a number',''))
+        var k = Number(prompt('Pick a number',''))
+        var m = 200
+        for(var x = 1;x ++;){
+            m *= ((k / 100) + 1)
+            if((n * x) > m || x > 20){
+                break
+            }
+        }
+        if(x <= 20){
+            console.log(x)
+        }else{
+            console.log('Impossible')
+        }
     </script>
-    <script type="" id="ch0105/17">
+    <script type="x" id="ch0105/17">
+        var k = Number(prompt('Pick a number',''))
+        var x = 0,y = 1,z = 1
+        for(var a = 1;a < k;a ++){
+            if (k === 1){
+                break
+            }
+            z = y + x
+            x = y
+            y = z
+        }
+        console.log(z)
     </script>
-    <script type="" id="ch0105/18">
+    <script type="x" id="ch0105/18">
+        var n = Number(prompt('Pick a number',''))
+        var x = Number(prompt('Pick a number',''))
+        var y = Number(prompt('Pick a number',''))
+        for(var a = 0;a < (n-1);a ++){
+            var x1 = Number(prompt('Pick a number',''))
+            var y1 = Number(prompt('Pick a number',''))
+            if((y1 / x1 - y / x) > 0.05){
+                console.log('better')
+            }else if((y1 / x1 - y / x) < -0.05){
+                console.log('worse')
+            }else{
+                console.log('same')
+            }
+        }
     </script>
-    <script type="" id="ch0105/19">
+    <script type="x" id="ch0105/19">
+        var n = Number(prompt('Pick a number',''))
+        var sum = 0
+        for(var a = 0;a < n;a ++){
+            var x = Number(prompt('Pick a number',''))
+            var y = Number(prompt('Pick a number',''))
+            var s = Number(prompt('Pick a number',''))
+            sum += (Math.sqrt(x * x + y * y)) / 25 + 1.5 * s
+        }
+        console.log(Math.ceil(sum))
     </script>
-    <script type="" id="ch0105/20">
+    <script type="x" id="ch0105/20">
+        var h = Number(prompt('Pick a number',''))
+        var s = h
+        for(var a = 0;a < 9;a ++){
+            s =s + h 
+            h *= 0.5
+        }
+        console.log(s,h * 0.5)
     </script>
-    <script type="" id="ch0105/21">
+    <script type="x" id="ch0105/21">
+        var n = Number(prompt('Pick a number',''))
+        var a = 0, b = 0
+        while(n > 1){
+            if(n % 2 !== 0){
+                a = 3 * n + 1
+                console.log(n+'*3+1='+a)
+                n = a
+            }else{
+                b = n / 2
+                console.log(n+'/2='+b)
+                n = b
+            }
+        }
+        console.log('End')
     </script>
-    <script type="" id="ch0105/22">
+    <script type="x" id="ch0105/22">
+        var re = 0,save = 0,save1 = 0,z = 0
+        for(var a = 0;a < 12; a++){
+            var n = Number(prompt('Pick a number',''))
+            if(n <= 300 + re){
+                save = (Math.floor((300 + re - n) / 100)) * 100
+                save1 = save1 + save
+                re = 300 - n - save + re
+            }
+            else{
+                z = -a - 1
+                console.log(z)
+            }
+        }
+        if(z == 0){
+            console.log(1.2 * save1 + re)
+        }
     </script>
     <script type="" id="ch0105/23">
     </script>
