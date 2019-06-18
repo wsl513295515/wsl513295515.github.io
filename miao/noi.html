@@ -648,29 +648,177 @@
             console.log(1.2 * save1 + re)
         }
     </script>
-    <script type="" id="ch0105/23">
+    <script type="x" id="ch0105/23">
+        var m = Number(prompt('Pick a number',''))
+        var n = Number(prompt('Pick a number',''))
+        var z = 0
+        for(var a = 0 ; a < n ; a++ ){
+            var q = Number(prompt('Pick a number',''))
+            var re = m - q
+            if(re < 0){
+                z ++
+            }else{
+                m -= q
+            }
+        }
+        console.log(z)
     </script>
-    <script type="" id="ch0105/24">
+    <script type="x" id="ch0105/24">
+        var n = Number(prompt('Pick a number',''))
+        var z = 0, u = 0
+        for(var a = 0 ; a < n ; a++ ){
+            var x = Number(prompt('Pick a number',''))
+            var y = Number(prompt('Pick a number',''))
+            if(x >= 90 && x <= 140 && y >= 60 && y <= 90){
+                z ++
+                u = Math.max(u,z)
+            }else{
+                z = 0
+            }
+        }
+        console.log(u)
     </script>
-    <script type="" id="ch0105/25">
+    <script type="x" id="ch0105/25">
+        var x,y,z,x1,y1,z1
+        for(var a = 48; a < 728; a ++){
+            x = Math.floor(a / 49)
+            y = Math.floor(a % 49 / 7)
+            z = a % 7
+            x1 = Math.floor(a / 81)
+            y1 = Math.floor(a % 81 / 9)
+            z1 = a % 9
+            if( (x === z1) &&
+                (y === y1) &&
+                (z === x1)){
+                    console.log(a)
+                    console.log(x,y,z)
+                    console.log(x1,y1,z1)
+                }
+        }
     </script>
-    <script type="" id="ch0105/26">
+    <script type="x" id="ch0105/26">
+        var n = Number(prompt('Pick a number',''))
+        var a,b,c,d,x = 0
+        for(var m = 0;m < n;m ++){
+            var s = Number(prompt('Pick a number',''))
+            a = Math.floor(s / 1000)
+            b = Math.floor(s % 1000 / 100)
+            c = Math.floor(s % 100 / 10)
+            d = s % 10
+            if((d - a - b - c) > 0){
+                x++
+            }
+        }
+        console.log(x)
     </script>
-    <script type="" id="ch0105/27">
+    <script type="x" id="ch0105/27">
+        var k = Number(prompt('Pick a number',''))
+        var y =0
+        for(var a = 1;;a++){
+            y += 1 / a
+            if(y > k){
+                break
+            }
+        }
+        console.log(a)
     </script>
-    <script type="" id="ch0105/28">
+    <script type="x" id="ch0105/28">
+        var n = Number(prompt('Pick a number',''))
+        var x
+        for(var a = 1;;a++){
+            x = Math.floor(n % (10 ** a) / (10 ** (a - 1)))
+            console.log(x)
+            if((10 ** a) > n){
+                break
+            }
+        }
     </script>
-    <script type="" id="ch0105/29">
+    <script type="x" id="ch0105/29">
+        var n = Number(prompt('Pick a number',''))
+        var x,y = 0;
+        var l = Math.abs(n).toString().length
+        for(var a = l;a > 0;a--){ 
+            abs = Math.abs(n)
+            x = Math.floor(abs % (10 ** a) / (10 ** (a - 1)))
+            y = y + x * (10 ** (l-a))
+        }
+        if(n >= 0){
+            console.log(y)
+        }else{
+            console.log(-y)
+        }
     </script>
-    <script type="" id="ch0105/30">
+    <script type="x" id="ch0105/30">
+        var m = Number(prompt('Pick a number',''))
+        var k = Number(prompt('Pick a number',''))
+        var x,y = 0
+        for(var a = 1;;a++){
+            x = Math.floor(m % (10 ** a) / (10 ** (a - 1)))
+            if(x === 3){
+                y ++
+            }
+            if((10 ** a) > m){
+                break
+            }
+        }
+        if(m % 19 ===0 && y === k){
+            console.log('YES')
+        }else{
+            console.log('NO')
+        }
     </script>
-    <script type="" id="ch0105/31">
+    <script type="x" id="ch0105/31">
+        var n = Number(prompt('Pick a number',''))
+        var m = Number(prompt('Pick a number',''))
+        var l = 1
+//         for(var a = 0;a < n;a ++){
+//             var a1 = a
+//             for(var b = 2;a <= m;b ++){
+//                 if(n % b === 0){
+//    我不会                 l = -l
+//                 }
+// -            }
+            
+//         }
     </script>
-    <script type="" id="ch0105/32">
+    <script type="x" id="ch0105/32">
+        var n = Number(prompt('Pick a number',''))
+        var q = 2
+        var p = 1
+        var x = 2
+        for(var a = 1;a < n;a ++){
+            q = q + p
+            p = q - p
+            x += (q / p)
+        }
+        console.log(x.toFixed(4))
     </script>
-    <script type="" id="ch0105/33">
+    <script type="x" id="ch0105/33">
+        var n = Number(prompt('Pick a number',''))
+        var a = 0
+        var sum = 0
+        for(var z = 0;z < n;z ++){
+            if(z % 2 ===0){
+                a = -1 / (z + 1)
+            }else{
+                a = 1 / (z + 1)
+            }
+            sum += a
+        }
+        console.log(a.toFixed(4))
     </script>
-    <script type="" id="ch0105/34">
+    <script type="x" id="ch0105/34">
+        var n = Number(prompt('Pick a number',''))
+        var sum = 0,c = 1,d,e = 0
+        for(var a = n;a >= 1;a --){
+            for(var b = a;b >= 1;b --){
+            e = c * b
+            c = e
+            }
+            sum += c
+            c = 1
+        }
+        console.log(sum)
     </script>
     <script type="" id="ch0105/35">
     </script>
@@ -687,6 +835,38 @@
     <script type="" id="ch0105/41">
     </script>
     <script type="" id="ch0105/42">
+        var h = Number(prompt('Pick a number',''))
+        var w = Number(prompt('Pick a number',''))
+        var l = String(prompt('Pick a number',''))
+        var n = Number(prompt('Pick a number',''))
+        var x = '',x1 = l,x2 = '',y = '',y1 = '',z
+        if(n == 1){
+            for(var b = 0;b < w;b ++){
+                x += l
+            }
+            for(var a = 0;a < h;a ++){
+                y = y + (x + '\n')
+            }
+            console.log(y)
+        }else{
+            for(var b = 0;b < w;b ++){
+                if(b > 0 && b < (w - 1)){
+                    z = ' '
+                    x1 += z
+                }
+                x += l
+            }
+                x1 += l
+            for(var a = 0;a < h;a ++){
+                if(a == 0 || a == (h - 1)){
+                    y = y + (x + '\n')
+                }else{
+                    y = y + (x1 + '\n')
+                }
+            }
+            console.log(y)
+        }
+        
     </script>
     <script type="" id="ch0105/43">
     </script>
