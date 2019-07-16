@@ -45,7 +45,7 @@ var wsl513295515 = {
     if(arguments.length === 2){
       i = 1
     }
-    for(; i < ary.length; i++){
+    for(i in ary){
       initialVal = reducer(initialVal, ary[i], i, ary)
     }
     return initialVal
