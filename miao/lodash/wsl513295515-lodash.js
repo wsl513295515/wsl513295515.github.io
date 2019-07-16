@@ -36,8 +36,8 @@ var wsl513295515 = {
     return psssed
   },
   forEach: function(array,f){
-    for(var i in array){
-      f(array[i], i, array)
+    for(var i = 0; i < array.length; i++){
+      return f(array[i], i, array)
     }
   }
 }
