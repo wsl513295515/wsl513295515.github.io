@@ -26,10 +26,10 @@ var wsl513295515 = {
       return f.apply(null,ary)
     }
   },
-  filter: function(array,test){
+  filter: function(array,f){
     var psssed = []
     for(var i = 0; i < array.length; i++){
-      if(test(array[i])){
+      if(f(array[i])){
         passed.push(array[i])
       }
     }
