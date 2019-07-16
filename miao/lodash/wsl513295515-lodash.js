@@ -29,11 +29,15 @@ var wsl513295515 = {
   filter: function(array,f){
     var psssed = []
     for(var i = 0; i < array.length; i++){
-      if(f(array[i])){
+      if(f(array[i],i,array)){
         passed.push(array[i])
       }
     }
     return psssed
   }
-
+  forEach: function(array,f){
+    for(var i in array){
+      f(array[i], i, array)
+    }
+  }
 }
