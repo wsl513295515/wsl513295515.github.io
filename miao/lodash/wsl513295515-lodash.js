@@ -37,7 +37,32 @@ var wsl513295515 = {
   },
   forEach: function(array,f){
     for(var i = 0; i < array.length; i++){
-      return f(array[i], i, array)
+      f(array[i], i, array)
     }
+  },
+  reduce: function(ary,reducer,initialVal = ary[0]){
+    var i = 0
+    if(arguments.length === 2){
+      i = 1
+    }
+    for(; i < ary.length; i++){
+      initialVal = reducer(initialVal, ary[i], i, ary)
+    }
+    return initialVal
+  }, 
+  max: function(){
+    var max = -Infinity
+    for(var i = 0; i < arguments.length; i++){
+      if(arguments[i] > max){
+        max = arguments[i]
+      }
+    }
+    return max
+  },
+  keyBy: function(ary,key){
+    return ary.reduce((result, item) => {
+      return result[item[key]] = item
+    }, {})
+    return result
   }
 }
