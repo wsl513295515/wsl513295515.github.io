@@ -40,12 +40,8 @@ var wsl513295515 = {
       f(array[i], i, array)
     }
   },
-  reduce: function(ary,reducer,initialVal = ary[0]){
-    var i = 0
-    if(arguments.length === 2){
-      i = 1
-    }
-    for(i in ary){
+  reduce: function(ary,reducer,initialVal = 0){
+    for(var i in ary){
       initialVal = reducer(initialVal, ary[i], i, ary)
     }
     return initialVal
