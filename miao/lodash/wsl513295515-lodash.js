@@ -60,5 +60,22 @@ var wsl513295515 = {
       return result[item[key]] = item
     }, {})
     return result
-  }
+  },
+  every: function(ary,predicate){
+    for(var i = 0; i < ary.length; i++){
+      if( ! predicate(ary[i], i, ary)){
+        return false
+      }
+    }
+    return true
+  },
+  isArray: function(value){
+    return Object.prototype.toString.call(value) == '[object Array]'
+  },
+  isFunction: function(value){
+    return Object.prototype.toString.call(value) == '[object Function]'
+  },
+  isNumber: function(value){
+    return Object.prototype.toString.call(value) == '[object Number]'
+  },
 }
