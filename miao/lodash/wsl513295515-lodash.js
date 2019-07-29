@@ -1,16 +1,16 @@
 var wsl513295515 = {
   chunk: function(ary,length){
     var res = []
-    var i = []
-    for(key in ary){
-      if(i.length == length){
-        res.push(i)
-        i = []
+    var c = []
+    for(var i = 0; i < ary.length; i++){
+      if(c.length == length){
+        res.push(c)
+        c = []
       }
-      i.push(ary[key])
+      c.push(ary[i])
     }
-    if(i.length != 0){
-      res.push(i)
+    if(c.length != 0){
+      res.push(c)
     }
     return res
   },
