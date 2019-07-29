@@ -24,6 +24,16 @@ var wsl513295515 = {
     var dif = [].concat(...values)
     return ary.filter(item => dif.indexOf(item) == -1)
   },
+  differenceBy: function(){
+   
+    
+  },
+  drop: function(ary,n = 1){
+    return ary.slice(n)
+  },
+  filter: function(){
+
+  },
   flip: function (func) {
     return function(...args) {
       return func(...args.reverse())
