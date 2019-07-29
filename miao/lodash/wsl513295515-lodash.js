@@ -20,6 +20,10 @@ var wsl513295515 = {
   concat: function(){
 
   },
+  difference: function(ary,...values){
+    var dif = [].concat(...values)
+    return ary.filter(item => dif.indexOf(item) == -1)
+  },
   flip: function (func) {
     return function(...args) {
       return func(...args.reverse())
