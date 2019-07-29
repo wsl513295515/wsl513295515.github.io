@@ -1,6 +1,24 @@
 var wsl513295515 = {
+  chunk: function(ary,length){
+    var res = []
+    var i = []
+    for(key in ary){
+      if(i.length == length){
+        res.push(i)
+        i = []
+      }
+      i.push(ary[key])
+    }
+    if(i.length != 0){
+      res.push(i)
+    }
+    return res
+  },
   compact: function (ary) {
     return ary.filter(it => it)
+  },
+  concat: function(){
+
   },
   flip: function (func) {
     return function(...args) {
