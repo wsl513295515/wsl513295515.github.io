@@ -63,6 +63,34 @@ var wsl513295515 = {
   flatten: function(ary){
     return ary.reduce((a,b) => a.concat(b),[])
   },
+  flattenDeep: function(ary){
+    var a = []
+    for(var i = 0; i < ary.length; i++){
+      if(ary[i] instanceof Array){
+        var arys = this.flattenDeep(ary[i])
+        a.push(...arys)
+      }else{
+        a.push(ary[i])
+      }
+    }
+    return a
+  },
+  flattenDepth: function(ary, depth = 0){
+    var a = []
+    for(var i = 0; i < ary.length; i++){
+      if(ary[i] instanceof Array && depth > 0){
+        depth--
+        var arys = this.flattenDepth(ary[i],depth)
+        a.push(...arys)
+      }else{
+        a.push(ary[i])
+      }
+    }
+    return a
+  },
+  // fromPairs: function(pairs){
+
+  // },
   head: function(ary){
     return ary[0]
   },
@@ -73,6 +101,30 @@ var wsl513295515 = {
       }
     }
     return -1
+  },
+  initial: function(ary){
+    ary.pop()
+    return ary
+  },
+  intersection: function(...arys){
+    var map = {}
+    var res = []
+    for(key in arys[0]){
+      map[arys[0][key]] = 1
+    }
+    for(var i = 1; i < arys.length; i++){
+      for(var j = 0; j < arys[i].length; j++){
+        if(arys[i][j] in map){
+          map[arys[i][j]] += 1
+        }
+      }
+    }
+    for(key in map){
+      if(map[key] == arys.length){
+        res.push(map[key])
+      }
+    }
+    return res
   },
 
 
