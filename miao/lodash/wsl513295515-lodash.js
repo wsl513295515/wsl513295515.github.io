@@ -17,17 +17,20 @@ var wsl513295515 = {
   compact: function (ary) {
     return ary.filter(it => it)
   },
-  concat: function(){
+  // concat: function(){
 
-  },
+  // },
   difference: function(ary,...values){
     var dif = [].concat(...values)
     return ary.filter(item => dif.indexOf(item) == -1)
   },
-  differenceBy: function(){
+  // differenceBy: function(){
    
     
-  },
+  // },
+  // differenceWith: function(){
+
+  // },
   drop: function(ary,n = 1){
     return ary.slice(n)
   },
@@ -36,6 +39,20 @@ var wsl513295515 = {
       return ary
     }
     return ary.slice(0, - n)
+  },
+  // dropRightWhile: function(){
+  
+    
+  // },
+  // dropWhile: function(){
+  
+    
+  // },
+  fill: function(ary = [], value ,start = 0 ,end = ary.length){
+    for(var i = start; i < end; i++){
+      ary[i] = value
+    }
+    return ary
   },
   filter: function(){
 
