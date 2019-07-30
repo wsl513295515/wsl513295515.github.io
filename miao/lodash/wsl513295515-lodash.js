@@ -54,9 +54,53 @@ var wsl513295515 = {
     }
     return ary
   },
-  filter: function(){
+  // findIndex: function(){
 
+  // },
+  // findLastIndex: function(){
+
+  // },
+  flatten: function(ary){
+    return ary.reduce((a,b) => a.concat(b),[])
   },
+  head: function(ary){
+    return ary[0]
+  },
+  indexOf: function(ary, value, from = 0){
+    for(var i = from; i < ary.length; i++){
+      if(ary[i] == value){
+        return i
+      }
+    }
+    return -1
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // filter: function(){
+
+  // },
   flip: function (func) {
     return function(...args) {
       return func(...args.reverse())
