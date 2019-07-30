@@ -31,6 +31,12 @@ var wsl513295515 = {
   drop: function(ary,n = 1){
     return ary.slice(n)
   },
+  dropRight: function(ary, n = 1){
+    if(n == 0){
+      return ary
+    }
+    return ary.slice(0, - n)
+  },
   filter: function(){
 
   },
