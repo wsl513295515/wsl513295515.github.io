@@ -248,7 +248,7 @@ var wsl513295515 = {
   },
   matches: function(src){
     return function(obj){
-      return this.isMatch(obj, src)
+      return wsl513295515.isMatch(obj, src)
     }
     // 或者:
     // var match = src => bind(this.isMatch, null, window, src)
