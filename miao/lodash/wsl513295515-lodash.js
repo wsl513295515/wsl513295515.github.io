@@ -24,14 +24,17 @@ var wsl513295515 = {
     var dif = [].concat(...values)
     return ary.filter(item => dif.indexOf(item) == -1)
   },
-  // differenceBy: function(){
-   
+  differenceBy: function(ary, ...values, f){
+    if(wsl513295515.isArray(f)){
+      values.push(f)
+      return wsl513295515.difference(ary, ...values)
+    }
     
-  // },
+  },
   // differenceWith: function(){
 
   // },
-  drop: function(ary,n = 1){
+  drop: function(ary, n = 1){
     return ary.slice(n)
   },
   dropRight: function(ary, n = 1){
@@ -246,6 +249,9 @@ var wsl513295515 = {
   isNumber: function(value){
     return Object.prototype.toString.call(value) == '[object Number]'
   },
+  isString: function(value){
+    return Object.prototype.toString.call(value) == '[object String]'
+  }
   matches: function(src){
     return function(obj){
       return wsl513295515.isMatch(obj, src)
