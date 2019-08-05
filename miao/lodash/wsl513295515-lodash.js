@@ -250,7 +250,7 @@ var wsl513295515 = {
     return function(obj){
       return this.isMatch(obj, src)
     }
-    或者:
+    // 或者:
     // var match = src => bind(this.isMatch, null, window, src)
     // function bind(f, thisArg, ...fixedArgs){
     //   return function(...args){
@@ -264,5 +264,5 @@ var wsl513295515 = {
     //     }
     //   }
     // }
-  },
+  }
 }
