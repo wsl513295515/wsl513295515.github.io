@@ -246,5 +246,5 @@ var wsl513295515 = {
   isNumber: function(value){
     return Object.prototype.toString.call(value) == '[object Number]'
   },
-  matches:  src => bind(isMatch, null, _, src)
+  matches:  src => bind(this.isMatch, null, _, src)
 }
