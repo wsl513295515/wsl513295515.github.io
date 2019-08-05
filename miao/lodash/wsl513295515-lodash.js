@@ -226,7 +226,25 @@ var wsl513295515 = {
   isFunction: function(value){
     return Object.prototype.toString.call(value) == '[object Function]'
   },
+  isMatch: function(object, source){
+    if(object == source){
+      return true
+    }
+    for(key in source){
+      if(typeof source[key] == 'object' && source[key] != null){
+        if(!this.isMatch(object[key],source[key])){
+          return false
+        }
+      }else{
+        if(object[key] != source[key]){
+          return false
+        }
+      }
+    }
+    return true
+  },
   isNumber: function(value){
     return Object.prototype.toString.call(value) == '[object Number]'
   },
+  matches:  src => bind(isMatch, null, _, src)
 }
