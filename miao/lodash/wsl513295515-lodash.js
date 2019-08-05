@@ -246,5 +246,23 @@ var wsl513295515 = {
   isNumber: function(value){
     return Object.prototype.toString.call(value) == '[object Number]'
   },
-  matches:  src => bind(this.isMatch, null, _, src)
+  matches: function(src){
+    return function(obj){
+      return this.isMatch(obj, src)
+    }
+    或者:
+    // var match = src => bind(this.isMatch, null, window, src)
+    // function bind(f, thisArg, ...fixedArgs){
+    //   return function(...args){
+    //     var acturalArgs = [...fixedArgs]
+    //     for(var i = 0; i < acturalArgs.length; i++){
+    //       if(acturalArgs[i] === window){
+    //         acturalArgs[i] = args.shift()
+    //       }
+    //       acturalArgs.push(...args)
+    //       return f(...acturalArgs)
+    //     }
+    //   }
+    // }
+  },
 }
