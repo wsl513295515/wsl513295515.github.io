@@ -185,14 +185,14 @@ var wsl513295515 = {
       return f.apply(null,ary)
     }
   },
-  filter: function(array,f = wsl513295515.indentify()){
-    var psssed = []
+  filter: function(array,f = wsl513295515.identity()){
+    var passed = []
     for(var i = 0; i < array.length; i++){
       if(f(array[i],i,array)){
         passed.push(array[i])
       }
     }
-    return psssed
+    return passed
   },
   forEach: function(array,f){
     for(var i = 0; i < array.length; i++){
@@ -257,8 +257,8 @@ var wsl513295515 = {
   isString: function(value){
     return Object.prototype.toString.call(value) == '[object String]'
   },
-  identity: function(value){
-    return value
+  identity: function(...value){
+    return value[0]
   },
   matches: function(src){
     return function(obj){
