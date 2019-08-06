@@ -24,7 +24,8 @@ var wsl513295515 = {
     var dif = [].concat(...values)
     return ary.filter(item => dif.indexOf(item) == -1)
   },
-  differenceBy: function(ary, ...values, f){
+  differenceBy: function(ary, ...values){
+    var f = values.pop()
     if(wsl513295515.isArray(f)){
       values.push(f)
       return wsl513295515.difference(ary, ...values)
