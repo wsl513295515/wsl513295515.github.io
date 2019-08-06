@@ -251,7 +251,7 @@ var wsl513295515 = {
   },
   isString: function(value){
     return Object.prototype.toString.call(value) == '[object String]'
-  }
+  },
   matches: function(src){
     return function(obj){
       return wsl513295515.isMatch(obj, src)
