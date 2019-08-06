@@ -29,7 +29,7 @@ var wsl513295515 = {
       values.push(f)
       return wsl513295515.difference(ary, ...values)
     }
-    
+    return false
   },
   // differenceWith: function(){
 
