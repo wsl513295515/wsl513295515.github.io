@@ -257,7 +257,7 @@ var wsl513295515 = {
   isString: function(value){
     return Object.prototype.toString.call(value) == '[object String]'
   },
-  indentity: function(value){
+  identity: function(value){
     return value
   },
   matches: function(src){
