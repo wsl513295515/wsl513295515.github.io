@@ -29,8 +29,12 @@ var wsl513295515 = {
     if(wsl513295515.isArray(f)){
       values.push(f)
       return wsl513295515.difference(ary, ...values)
+    }else if(wsl513295515.isFunction(f)){
+      values = wsl513295515.flattenDeep(values).map(f)
+      return wsl513295515.difference(ary, ...values)
+    }else{
+      
     }
-    return false
   },
   // differenceWith: function(){
 
@@ -181,7 +185,7 @@ var wsl513295515 = {
       return f.apply(null,ary)
     }
   },
-  filter: function(array,f){
+  filter: function(array,f = wsl513295515.indentify()){
     var psssed = []
     for(var i = 0; i < array.length; i++){
       if(f(array[i],i,array)){
@@ -252,6 +256,9 @@ var wsl513295515 = {
   },
   isString: function(value){
     return Object.prototype.toString.call(value) == '[object String]'
+  },
+  indentify: function(value){
+    return value
   },
   matches: function(src){
     return function(obj){
