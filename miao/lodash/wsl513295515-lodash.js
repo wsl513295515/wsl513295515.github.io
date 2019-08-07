@@ -185,13 +185,41 @@ var wsl513295515 = {
       return f.apply(null,ary)
     }
   },
-  filter: function(array,f = wsl513295515.identity()){
+  filter: function(array,f){
     var passed = []
-    for(var i = 0; i < array.length; i++){
-      if(f(array[i],i,array)){
-        passed.push(array[i])
+    if(wsl513295515.isFunction(f)){
+      for(var i = 0; i < array.length; i++){
+        if(f(array[i])){
+          passed.push(array[i])
+        }
+      }
+    }else if(wsl513295515.isString(f)){
+      for(var i = 0; i < array.length; i++){
+        if((f in array[i] && array[i][f])){
+          passed.push(array[i])
+        }
+      }
+    }else if(wsl513295515.isArray(f)){
+      for(var i = 0; i < array.length; i++){
+        if((f[0] in array[i] && array[i][f[0]] == f[1])){
+          passed.push(array[i])
+        }
+      }
+    }else{
+      for(var i = 0; i < array.length; i++){
+        var a = true
+        for(key in f){
+          if(key in array[i] && f[key] == array[i][key]){
+          }else{
+            a = false
+          }
+        }
+        if(a){
+          passed.push(array[i])
+        }
       }
     }
+    
     return passed
   },
   forEach: function(array,f){
