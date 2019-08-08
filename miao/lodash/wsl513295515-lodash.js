@@ -154,6 +154,7 @@ var wsl513295515 = {
         return i
       }
     }
+    return -1
   },
   nth: function(ary, n = 0){
     if(n >= 0){
