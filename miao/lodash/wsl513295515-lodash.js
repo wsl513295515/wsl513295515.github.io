@@ -26,14 +26,14 @@ var wsl513295515 = {
   },
   differenceBy: function(ary, ...values){
     var f = values.pop()
-    if(wsl513295515.isArray(f)){
-      values.push(f)
-      return wsl513295515.difference(ary, ...values)
-    }else if(wsl513295515.isFunction(f)){
-      values = wsl513295515.flattenDeep(values).map(f)
-      return wsl513295515.difference(ary, ...values)
-    }else{
-      
+    if (this.isArray(f)) {
+        values.push(f)
+        return this.difference(ary, ...values)
+    } else if (this.isFunction(f)) {
+        values = this.flattenDeep(values).map(f(...values))
+        return this.difference(ary, ...values)
+    } else {
+
     }
   },
   // differenceWith: function(){
@@ -187,19 +187,19 @@ var wsl513295515 = {
   },
   filter: function(array,f){
     var passed = []
-    if(wsl513295515.isFunction(f)){
+    if(this.isFunction(f)){
       for(var i = 0; i < array.length; i++){
         if(f(array[i])){
           passed.push(array[i])
         }
       }
-    }else if(wsl513295515.isString(f)){
+    }else if(this.isString(f)){
       for(var i = 0; i < array.length; i++){
         if((f in array[i] && array[i][f])){
           passed.push(array[i])
         }
       }
-    }else if(wsl513295515.isArray(f)){
+    }else if(this.isArray(f)){
       for(var i = 0; i < array.length; i++){
         if((f[0] in array[i] && array[i][f[0]] == f[1])){
           passed.push(array[i])
@@ -290,7 +290,7 @@ var wsl513295515 = {
   },
   matches: function(src){
     return function(obj){
-      return wsl513295515.isMatch(obj, src)
+      return this.isMatch(obj, src)
     }
     // 或者:
     // var match = src => bind(this.isMatch, null, window, src)
