@@ -30,8 +30,8 @@ var wsl513295515 = {
         values.push(f)
         return this.difference(ary, ...values)
     } else if (this.isFunction(f)) {
-        values = this.flattenDeep(values).map(f(...values))
-        return this.difference(ary, ...values)
+        values = this.flattenDeep(values).map(f)
+        this.difference(ary, ...values)
     } else {
 
     }
@@ -96,6 +96,9 @@ var wsl513295515 = {
     }
     return a
   },
+  toPairs(obj){
+
+  },
   // fromPairs: function(pairs){
 
   // },
@@ -133,6 +136,47 @@ var wsl513295515 = {
       }
     }
     return res
+  },
+  join: function(array, sep = ''){
+    var res = ''
+    for(var i = 0; i < array.length - 1; i++){
+      res = res + array[i] + sep
+    }
+    res += array[array.length-1]
+    return res
+  },
+  last: function(ary){
+    return ary[ary.length-1]
+  },
+  lastIndexOf: function(ary, val, fromIndex = ary.length - 1){
+    for(var i = fromIndex; i >= 0; i--){
+      if(ary[i] == val){
+        return i
+      }
+    }
+  },
+  nth: function(ary, n = 0){
+    if(n >= 0){
+      return ary[n]
+    }else{
+      return ary[ary.length + n]
+    }
+  },
+  pull: function(ary, ...values){
+    for(var i = 0; i < values.length; i++){
+      while(ary.indexOf(values[i]) >= 0){
+        ary.splice(ary.indexOf(values[i]),1)
+      }
+    }
+    return ary
+  },
+  pullAll: function(ary, values){
+    for(var i = 0; i < values.length; i++){
+      while(ary.indexOf(values[i]) >= 0){
+        ary.splice(ary.indexOf(values[i]),1)
+      }
+    }
+    return ary
   },
 
 
