@@ -307,6 +307,15 @@ var wsl513295515 = {
   isFunction: function(value){
     return Object.prototype.toString.call(value) == '[object Function]'
   },
+  toFinite: function(value){
+
+  },
+  toInteger: function(value){
+
+  },
+  isIntrger: function(value){
+
+  },
   isMatch: function(object, source){
     if(object == source){
       return true
@@ -324,14 +333,44 @@ var wsl513295515 = {
     }
     return true
   },
+  toNumber: function(value){
+    if(typeof value == 'number'){
+      return value
+    }
+    if(this.isSymbol(value)){
+      return NaN
+    }
+    if(this.isObject(value)){
+      var other = typeof value.valueof == 'function' ? value.valueof() : value
+      value = this.isObject(other) ? (other + '') : other
+    }
+    if(typeof value != 'string'){
+      return value === 0 ? value : +value
+    }
+    value = value.replace(/^\s+|\s+$/, '')
+    var isBinary = /^0b[12]+$/i.test(value)
+    return (isBinary || /^0o[1-7]+$/i.test(value))
+     ? parseInt(value.slice(2), isBinary ? 2 : 8)
+      : (/^[+-]0x[0-9a-f]+&/i.test(value) ? NaN : +value)
+  },
   isNumber: function(value){
-    return Object.prototype.toString.call(value) == '[object Number]'
+    return typeof value == 'number' || (isObjectLike(value) && getTag(value) == '[object Number]')
+  },
+  isObject: function(value){
+    var type = typeof value
+    return value != null && (type == 'object' || type == 'function')
+  },
+  isObjectLike: function(value){
+    return typeof value == 'object' && value != null
   },
   isString: function(value){
     return Object.prototype.toString.call(value) == '[object String]'
   },
-  identity: function(...value){
-    return value[0]
+  isSymbol: function(value){
+    return typeof value == 'symbol' || (typeof value == 'object' && Object.prototype.toString.call(value) == '[object Symbol]')
+  },
+  identity: function(...values){
+    return values[0]
   },
   matches: function(src){
     return function(obj){
@@ -351,5 +390,11 @@ var wsl513295515 = {
     //     }
     //   }
     // }
+  },
+  getTag: function(value){
+    if(value == null){
+      return value === undefined ? '[object Undefined]' : '[object Null]'
+    }
+      return Object.prototype.toString.call(value)
   }
 }
