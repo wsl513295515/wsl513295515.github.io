@@ -354,7 +354,7 @@ var wsl513295515 = {
       : (/^[+-]0x[0-9a-f]+&/i.test(value) ? NaN : +value)
   },
   isNumber: function(value){
-    return typeof value == 'number' || (isObjectLike(value) && getTag(value) == '[object Number]')
+    return typeof value == 'number' || (this.isObjectLike(value) && getTag(value) == '[object Number]')
   },
   isObject: function(value){
     var type = typeof value
