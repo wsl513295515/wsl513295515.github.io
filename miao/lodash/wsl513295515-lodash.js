@@ -24,17 +24,32 @@ var wsl513295515 = {
     var dif = [].concat(...values)
     return ary.filter(item => dif.indexOf(item) == -1)
   },
-  differenceBy: function(ary, ...values){
-    var f = values.pop()
-    if (this.isArray(f)) {
-        values.push(f)
-        return this.difference(ary, ...values)
-    } else if (this.isFunction(f)) {
-        values = this.flattenDeep(values).map(f)
-        this.difference(ary, ...values)
-    } else {
-
+  differenceBy: function(array, ...values){
+    let iteratee = this.last(values)
+    if(this.isArrayLikeObject(iteratee)){
+      iteratee = undefined
     }
+    values = this.flattenDeep(values)
+    const result = []
+    const valuesLength = values.length
+    if(!array.length){
+      return result
+    }
+    if(iteratee){
+      values = values.map(it => iteratee(it))
+    }
+    outer:
+    for(let value of array){
+      const computed = iteratee == null ? value : iteratee(value)
+      let valuesIndex = valuesLength
+      while(valuesIndex--){
+        if(values[valuesIndex] === computed){
+          continue outer
+        }
+      }
+      result.push(value)
+    }
+    return result
   },
   // differenceWith: function(){
 
@@ -69,7 +84,7 @@ var wsl513295515 = {
 
   // },
   flatten: function(ary){
-    return ary.reduce((a,b) => a.concat(b),[])
+    return [].concat(...ary)
   },
   flattenDeep: function(ary){
     var a = []
@@ -146,7 +161,11 @@ var wsl513295515 = {
     return res
   },
   last: function(ary){
-    return ary[ary.length-1]
+    if(ary == null){
+      return undefined
+    }else{
+      return ary[ary.length-1]
+    }
   },
   lastIndexOf: function(ary, val, fromIndex = ary.length - 1){
     for(var i = fromIndex; i >= 0; i--){
@@ -304,6 +323,12 @@ var wsl513295515 = {
   isArray: function(value){
     return Object.prototype.toString.call(value) == '[object Array]'
   },
+  isArrayLike: function(value){
+    return value != null && !this.isFunction(value) && (value.length>=0 && value.length <= Number.MAX_SAFE_INTEGER && value.length % 1 == 0)
+  },
+  isArrayLikeObject: function(value){
+    return this.isArrayLike(value) && this.isObjectLike(value)
+  },
   isFunction: function(value){
     return Object.prototype.toString.call(value) == '[object Function]'
   },
@@ -396,5 +421,14 @@ var wsl513295515 = {
       return value === undefined ? '[object Undefined]' : '[object Null]'
     }
       return Object.prototype.toString.call(value)
-  }
+  },
+  // baseDifference.js
+// baseDifference方法用来将array数组与values数组进行对比，将存在于两者之中的元素从array数组中剔除掉，array中剩余的值组成一个新数组返回
+// 对比的时候可以传入迭代器iteratee函数，array和values数组中的每个元素都会调用迭代器iteratee进行处理，然后chubaseDifference对比处理后的值
+// 对比的时候也可以传入比较器函数，在对比的时候调用comparator来比较array和values中每个元素，可以理解为比较器comparator定义了对比的规则，默认是看两个值是否相等
+// baseDifference方法会接收4个参数，依次为需要处理的array数组、用来对比的values数组、迭代器iteratee、比较器comparator
+// 迭代器iteratee是个function，array和values中的每个元素都需要调用该方法处理
+// 遍历values，当values中有元素与computed相同时，跳出当前array的循环，继续进行array的下一个循环，这样可以减少不必要的循环
+      // 只有当遍历完values中所有的元素后，如果都没有与computed相同的，说明当前value是array独有的，那么将value添加到result中
+
 }
