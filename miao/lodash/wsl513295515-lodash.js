@@ -291,14 +291,72 @@ var wsl513295515 = {
     return array
   },
   pullAllWith: function(array, values, comparator){
-      for (var i = 0; i < values.length; i++) {
-          for(var j = 0; j < array.length; j++){
-            if(comparator(array[j],values[i])){
-              array.splice(j,1)
-            }
+    for (var i = 0; i < values.length; i++) {
+        for(var j = 0; j < array.length; j++){
+          if(comparator(array[j],values[i])){
+            array.splice(j,1)
           }
+        }
+    }
+    return array
+  },
+  reverse: function(array){
+    var arraylength = array.length
+    while(arraylength--){
+      array.push(array[arraylength])
+    }
+    return array.slice(array.length / 2)
+  },
+  sortedIndex: function(array, value){
+    var low = 0
+    var high = array.length - 1
+    if(value < array[low]){
+      return 0
+    }
+    if(value > array[high]){
+      return high
+    }
+    while(low < high - 1){
+      var mid = (low + high) >>> 1
+      if(value > array[mid]){
+        low = mid
+      }else if(value < array[mid]){
+        high = mid
+      }else{
+        high = mid
       }
-      return array
+    }
+    if(value > array[low]){
+      return high
+    }
+    return low
+  },
+  sortedIndexBy: function(array, value, iteratee){
+    this.transtype(iteratee)
+    var val = fun(value)
+    var ary = array.map(it => fun(it))
+    var low = 0
+    var high = ary.length - 1
+    if(val < ary[low]){
+      return 0
+    }
+    if(value > ary[high]){
+      return high
+    }
+    while(low < high - 1){
+      var mid = (low + high) >>> 1
+      if(value > ary[mid]){
+        low = mid
+      }else if(value < ary[mid]){
+        high = mid
+      }else{
+        high = mid
+      }
+    }
+    if(value > ary[low]){
+      return high
+    }
+    return low
   },
 
 
