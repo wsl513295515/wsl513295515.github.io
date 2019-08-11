@@ -227,7 +227,7 @@ var wsl513295515 = {
       let arylength = ary.length
       while(arylength--)
       if(comparator(key,ary[arylength])){
-        result.includes(key) ? reault : result.push(key)
+        result.includes(key) ? result : result.push(key)
       }
     }
     return result
@@ -357,6 +357,84 @@ var wsl513295515 = {
       return high
     }
     return low
+  },
+  sortedIndexOf: function(array, value){
+    return this.sortedIndex(array, value)
+  },
+  sortedLastIndex: function(array, value){
+    var low = 0
+    var high = array.length - 1
+    if(value < array[low]){
+      return 0
+    }
+    if(value > array[high]){
+      return high
+    }
+    while(low < high - 1){
+      var mid = (low + high) >>> 1
+      if(value > array[mid]){
+        low = mid
+      }else if(value < array[mid]){
+        high = mid
+      }else{
+        low = mid
+      }
+    }
+    if(value > array[high]){
+      return high + 1
+    }
+    return high
+  },
+  sortedLastIndexBy: function(array, value, iteratee){
+    this.transtype(iteratee)
+    var val = fun(value)
+    var ary = array.map(it => fun(it))
+    var low = 0
+    var high = ary.length - 1
+    if(val < ary[low]){
+      return 0
+    }
+    if(value > ary[high]){
+      return high
+    }
+    while(low < high - 1){
+      var mid = (low + high) >>> 1
+      if(value > ary[mid]){
+        low = mid
+      }else if(value < ary[mid]){
+        high = mid
+      }else{
+        low = mid
+      }
+    }
+    if(value > ary[high]){
+      return high + 1
+    }
+    return high
+  },
+  sortedLastIndexOf: function(array, value){
+    return this.sortedLastIndex(array, value)
+  },
+  sortedUniq: function(array){
+    var result = []
+    for(var i = 0; i < array.length; i++){
+      result.push(array[i])
+      while(array[i+1] == array[i]){
+        i++
+      }
+    }
+    return result
+  },
+  sortedUniqBy: function(array, iteratee){
+    this.transtype(iteratee)
+    var result = []
+    for(var i = 0; i < array.length; i++){
+      result.push(array[i])
+      while(fun(array[i+1]) == fun(array[i])){
+        i++
+      }
+    }
+    return result
   },
 
 
