@@ -209,10 +209,10 @@ var wsl513295515 = {
     }
     return res
   },
-  intersectionBy: function(arrays, iteratee){
+  intersectionBy: function(array, arrays, iteratee){
     var result = []
     this.transtype(iteratee)
-    letary = this.flattenDeep(arrays).map(it => fun(it))
+    let ary = this.flattenDeep(arrays).map(it => fun(it))
     for(let key of array){
       if(ary.includes(fun(key))){
         result.push(key)
