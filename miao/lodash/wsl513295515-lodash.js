@@ -264,21 +264,41 @@ var wsl513295515 = {
       return ary[ary.length + n]
     }
   },
-  pull: function(ary, ...values){
-    for(var i = 0; i < values.length; i++){
-      while(ary.indexOf(values[i]) >= 0){
-        ary.splice(ary.indexOf(values[i]),1)
+  pull: function(array, ...values){
+    for(let key of values){
+      while(array.includes(key)){
+        array.splice(array.indexOf(key),1)
       }
     }
-    return ary
+    return array
   },
-  pullAll: function(ary, values){
-    for(var i = 0; i < values.length; i++){
-      while(ary.indexOf(values[i]) >= 0){
-        ary.splice(ary.indexOf(values[i]),1)
+  pullAll: function(array, values){
+    for(let key of values){
+      while(array.includes(key)){
+        array.splice(array.indexOf(key),1)
       }
     }
-    return ary
+    return array
+  },
+  pullAllBy: function(array, values, iteratee){
+    this.transtype(iteratee)
+    let val = this.flattenDeep(values).map(it => fun(it))
+    for(let key of val){
+      while(array.map(it=>fun(it)).includes(key)){
+        array.splice(array.map(it=>fun(it)).indexOf(key),1)
+      }
+    }
+    return array
+  },
+  pullAllWith: function(array, values, comparator){
+      for (var i = 0; i < values.length; i++) {
+          for(var j = 0; j < array.length; j++){
+            if(comparator(array[j],values[i])){
+              array.splice(j,1)
+            }
+          }
+      }
+      return array
   },
 
 
