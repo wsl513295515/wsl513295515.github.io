@@ -35,11 +35,14 @@ var wsl513295515 = {
     if(!array.length){
       return result
     }
+    if(this.isString(iteratee)){
+      values = values.map(it => it[iteratee])
+    }
     if(this.isFunction(iteratee)){
       values = values.map(it => iteratee(it))
     }
     for(let value of array){
-      const computed = iteratee == null ? value : iteratee(value)
+      const computed = iteratee == null ? value : (this.isFunction(iteratee) ? iteratee(value) : value[iteratee])
       let valuesIndex = valuesLength
       while(valuesIndex--){
         if(values[valuesIndex] === computed){
