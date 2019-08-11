@@ -319,6 +319,8 @@ var wsl513295515 = {
           return key in it && it[key] == predicate[key]
         }
       }
+    }else{
+      fun = predicate
     }
     for(var i = fromIndex; i < collection.length; i++){
       if(fun(collection[i])){
