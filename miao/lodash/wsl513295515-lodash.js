@@ -138,7 +138,9 @@ var wsl513295515 = {
   },
   indexOf: function(ary, value, from = 0){
     for(var i = from; i < ary.length; i++){
-      if(ary[i] == value){
+      if(ary[i] === value){
+        return i
+      }else if(ary[i] != ary[i] && value != value) {
         return i
       }
     }
