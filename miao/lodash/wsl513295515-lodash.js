@@ -382,9 +382,9 @@ var wsl513295515 = {
 
 
 
-  // filter: function(){
+  union: function(){
 
-  // },
+  },
   flip: function (func) {
     return function(...args) {
       return func(...args.reverse())
