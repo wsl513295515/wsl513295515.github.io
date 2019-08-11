@@ -189,7 +189,7 @@ var wsl513295515 = {
     for(var i = fromIndex; i >= 0; i--){
       if(ary[i] == val){
         return i
-      }else if(ary[i] != ary[i] && value != value) {
+      }else if(ary[i] != ary[i] && val != val) {
         return i
       }
     }
@@ -305,6 +305,26 @@ var wsl513295515 = {
     }
     
     return passed
+  },
+  find: function(collection, predicate, fromIndex = 0){
+    if(!predicate){
+      return collection[fromIndex]
+    }else if(this.isArray(predicate)){
+      fun = it => it[predicate[0]] == predicate[1]
+    }else if(this.isString(predicate)){
+      fun = it => it[predicate]
+    }else if(this.isObjectLike(predicate)){
+      fun = it => {
+        for(let key in predicate){
+          return key in it && it[key] == predicate[key]
+        }
+      }
+    }
+    for(var i = fromIndex; i < collection.length; i++){
+      if(fun(collection[i])){
+        return collection[i]
+      }
+    }
   },
   forEach: function(array,f){
     for(var i = 0; i < array.length; i++){
