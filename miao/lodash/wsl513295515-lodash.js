@@ -357,7 +357,7 @@ var wsl513295515 = {
     }else if(this.isObject(value) && this.isObject(other)){
       var valuekey = Object.keys(value)
       var otherkey = Object.keys(other)
-      if(valuekey !== otherkey){
+      if(valuekey.length !== otherkey.length){
         return false
       }else{
           for(let key in value){
