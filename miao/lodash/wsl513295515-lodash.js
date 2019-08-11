@@ -53,9 +53,23 @@ var wsl513295515 = {
     }
     return result
   },
-  // differenceWith: function(){
-
-  // },
+  differenceWith: function(array, values, comparator = null){
+    var result = []
+    if(!comparator){
+      return result
+    }
+    values = this.flattenDeep(values)
+    for(let value of array){
+      let valuesIndex = values.length
+      while(valuesIndex--){
+        if(comparator(value,values[valuesIndex])){
+          break
+        }
+      }
+      valuesIndex === -1 ? result.push(value) : result
+    }
+    return result
+  },
   drop: function(ary, n = 1){
     return ary.slice(n)
   },
@@ -330,6 +344,9 @@ var wsl513295515 = {
   },
   isArrayLikeObject: function(value){
     return this.isArrayLike(value) && this.isObjectLike(value)
+  },
+  isEqual: function(value,other){
+
   },
   isFunction: function(value){
     return Object.prototype.toString.call(value) == '[object Function]'
