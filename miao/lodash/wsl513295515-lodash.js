@@ -359,7 +359,7 @@ var wsl513295515 = {
         if(value[key] != other[key]){
           return false
         }else{
-          this.isEqual(value[key],other[key])
+          return this.isEqual(value[key],other[key])
         }
       }
       return true
