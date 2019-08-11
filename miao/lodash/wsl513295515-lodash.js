@@ -355,12 +355,12 @@ var wsl513295515 = {
     }else if(value != value && other != other){
       return true
     }else if(this.isObject(value) && this.isObject(other)){
-      for(key in value){
-        if(value[key] != other[key]){
-          return false
-        }else{
+      var valuekey = Object.keys(value)
+      var otherkey = Object.keys(other)
+      if(valuekey !== otherkey){
+        return false
+      }else{
           return this.isEqual(value[key],other[key])
-        }
       }
       return true
     }else{
