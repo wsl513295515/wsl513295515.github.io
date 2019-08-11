@@ -360,7 +360,13 @@ var wsl513295515 = {
       if(valuekey !== otherkey){
         return false
       }else{
-          return this.isEqual(value[key],other[key])
+          for(let key in value){
+            if(this.isEqual(value[key], other[key])){
+              continue
+            }else{
+              return false
+            }
+          }
       }
       return true
     }else{
