@@ -79,9 +79,9 @@ var wsl513295515 = {
     }
     return ary.slice(0, - n)
   },
-  dropRightWhile: function(array, predicate){
+  transtype: function(predicate){
     if(!predicate){
-      return array
+      fun = it => it
     }else if(this.isArray(predicate)){
       fun = it => it[predicate[0]] == predicate[1]
     }else if(this.isString(predicate)){
@@ -95,27 +95,17 @@ var wsl513295515 = {
     }else{
       fun = predicate
     }
+    return fun
+  },
+  dropRightWhile: function(array, predicate){
+    this.transtype(predicate)
     while(array.length && fun(this.last(array))){
       array.pop()
     }
     return array
   },
   dropWhile: function(array, predicate){
-    if(!predicate){
-      return array
-    }else if(this.isArray(predicate)){
-      fun = it => it[predicate[0]] == predicate[1]
-    }else if(this.isString(predicate)){
-      fun = it => it[predicate]
-    }else if(this.isObjectLike(predicate)){
-      fun = it => {
-        for(let key in predicate){
-          return key in it && it[key] == predicate[key]
-        }
-      }
-    }else{
-      fun = predicate
-    }
+    this.transtype(predicate)
     while(array.length && fun(array[0])){
       array.shift()
     }
@@ -128,21 +118,7 @@ var wsl513295515 = {
     return ary
   },
   findIndex: function(collection, predicate, fromIndex = 0){
-    if(!predicate){
-      return collection[fromIndex]
-    }else if(this.isArray(predicate)){
-      fun = it => it[predicate[0]] == predicate[1]
-    }else if(this.isString(predicate)){
-      fun = it => it[predicate]
-    }else if(this.isObjectLike(predicate)){
-      fun = it => {
-        for(let key in predicate){
-          return key in it && it[key] == predicate[key]
-        }
-      }
-    }else{
-      fun = predicate
-    }
+    this.transtype(predicate)
     for(var i = fromIndex; i < collection.length; i++){
       if(fun(collection[i])){
         return i
@@ -151,21 +127,7 @@ var wsl513295515 = {
     return -1
   },
   findLastIndex: function(collection, predicate, fromIndex = collection.length-1){
-    if(!predicate){
-      return collection[fromIndex]
-    }else if(this.isArray(predicate)){
-      fun = it => it[predicate[0]] == predicate[1]
-    }else if(this.isString(predicate)){
-      fun = it => it[predicate]
-    }else if(this.isObjectLike(predicate)){
-      fun = it => {
-        for(let key in predicate){
-          return key in it && it[key] == predicate[key]
-        }
-      }
-    }else{
-      fun = predicate
-    }
+    this.transtype(predicate)
     for(var i = fromIndex; i >= 0; i--){
       if(fun(collection[i])){
         return i
@@ -565,13 +527,4 @@ var wsl513295515 = {
     }
       return Object.prototype.toString.call(value)
   },
-  // baseDifference.js
-// baseDifference方法用来将array数组与values数组进行对比，将存在于两者之中的元素从array数组中剔除掉，array中剩余的值组成一个新数组返回
-// 对比的时候可以传入迭代器iteratee函数，array和values数组中的每个元素都会调用迭代器iteratee进行处理，然后chubaseDifference对比处理后的值
-// 对比的时候也可以传入比较器函数，在对比的时候调用comparator来比较array和values中每个元素，可以理解为比较器comparator定义了对比的规则，默认是看两个值是否相等
-// baseDifference方法会接收4个参数，依次为需要处理的array数组、用来对比的values数组、迭代器iteratee、比较器comparator
-// 迭代器iteratee是个function，array和values中的每个元素都需要调用该方法处理
-// 遍历values，当values中有元素与computed相同时，跳出当前array的循环，继续进行array的下一个循环，这样可以减少不必要的循环
-      // 只有当遍历完values中所有的元素后，如果都没有与computed相同的，说明当前value是array独有的，那么将value添加到result中
-
 }
