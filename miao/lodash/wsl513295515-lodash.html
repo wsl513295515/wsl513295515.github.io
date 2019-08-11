@@ -11,11 +11,11 @@
   <script>
     console.log(wsl513295515.
     
-    find([
-  { 'user': 'barney',  'age': 36, 'active': true },
-  { 'user': 'fred',    'age': 40, 'active': false },
-  { 'user': 'pebbles', 'age': 1,  'active': true }
-], 'active')
+    findLastIndex([
+  { 'user': 'barney',  'active': true },
+  { 'user': 'fred',    'active': false },
+  { 'user': 'pebbles', 'active': false }
+], function(o) { return o.user == 'pebbles'; })
     
     )
   </script>

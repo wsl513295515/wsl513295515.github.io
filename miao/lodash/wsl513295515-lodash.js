@@ -93,12 +93,51 @@ var wsl513295515 = {
     }
     return ary
   },
-  // findIndex: function(){
-
-  // },
-  // findLastIndex: function(){
-
-  // },
+  findIndex: function(collection, predicate, fromIndex = 0){
+    if(!predicate){
+      return collection[fromIndex]
+    }else if(this.isArray(predicate)){
+      fun = it => it[predicate[0]] == predicate[1]
+    }else if(this.isString(predicate)){
+      fun = it => it[predicate]
+    }else if(this.isObjectLike(predicate)){
+      fun = it => {
+        for(let key in predicate){
+          return key in it && it[key] == predicate[key]
+        }
+      }
+    }else{
+      fun = predicate
+    }
+    for(var i = fromIndex; i < collection.length; i++){
+      if(fun(collection[i])){
+        return i
+      }
+    }
+    return -1
+  },
+  findLastIndex: function(collection, predicate, fromIndex = collection.length-1){
+    if(!predicate){
+      return collection[fromIndex]
+    }else if(this.isArray(predicate)){
+      fun = it => it[predicate[0]] == predicate[1]
+    }else if(this.isString(predicate)){
+      fun = it => it[predicate]
+    }else if(this.isObjectLike(predicate)){
+      fun = it => {
+        for(let key in predicate){
+          return key in it && it[key] == predicate[key]
+        }
+      }
+    }else{
+      fun = predicate
+    }
+    for(var i = fromIndex; i >= 0; i--){
+      if(fun(collection[i])){
+        return i
+      }
+    }
+  },
   flatten: function(ary){
     return [].concat(...ary)
   },
