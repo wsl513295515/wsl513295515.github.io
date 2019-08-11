@@ -203,9 +203,13 @@ var wsl513295515 = {
   toPairs(obj){
 
   },
-  // fromPairs: function(pairs){
-
-  // },
+  fromPairs: function(pairs){
+    var result = {}
+    for(var i = 0; i < pairs.length; i++){
+      result[pairs[i][0]] = pairs[i][1]
+    }
+    return result
+  },
   head: function(ary){
     return ary[0]
   },
