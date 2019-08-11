@@ -79,14 +79,48 @@ var wsl513295515 = {
     }
     return ary.slice(0, - n)
   },
-  // dropRightWhile: function(){
-  
-    
-  // },
-  // dropWhile: function(){
-  
-    
-  // },
+  dropRightWhile: function(array, predicate){
+    if(!predicate){
+      return array
+    }else if(this.isArray(predicate)){
+      fun = it => it[predicate[0]] == predicate[1]
+    }else if(this.isString(predicate)){
+      fun = it => it[predicate]
+    }else if(this.isObjectLike(predicate)){
+      fun = it => {
+        for(let key in predicate){
+          return key in it && it[key] == predicate[key]
+        }
+      }
+    }else{
+      fun = predicate
+    }
+    while(array.length && fun(this.last(array))){
+      array.pop()
+    }
+    return array
+  },
+  dropWhile: function(array, predicate){
+    if(!predicate){
+      return array
+    }else if(this.isArray(predicate)){
+      fun = it => it[predicate[0]] == predicate[1]
+    }else if(this.isString(predicate)){
+      fun = it => it[predicate]
+    }else if(this.isObjectLike(predicate)){
+      fun = it => {
+        for(let key in predicate){
+          return key in it && it[key] == predicate[key]
+        }
+      }
+    }else{
+      fun = predicate
+    }
+    while(array.length && fun(array[0])){
+      array.shift()
+    }
+    return array
+  },
   fill: function(ary = [], value ,start = 0 ,end = ary.length){
     for(var i = start; i < end; i++){
       ary[i] = value

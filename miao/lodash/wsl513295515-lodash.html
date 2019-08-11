@@ -11,11 +11,11 @@
   <script>
     console.log(wsl513295515.
     
-    findLastIndex([
-  { 'user': 'barney',  'active': true },
+    dropWhile([
+  { 'user': 'barney',  'active': false },
   { 'user': 'fred',    'active': false },
-  { 'user': 'pebbles', 'active': false }
-], function(o) { return o.user == 'pebbles'; })
+  { 'user': 'pebbles', 'active': true }
+], function(o) { return !o.active; })
     
     )
   </script>
