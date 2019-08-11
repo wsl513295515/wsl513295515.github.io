@@ -209,10 +209,33 @@ var wsl513295515 = {
     }
     return res
   },
-  join: function(array, sep = ''){
+  intersectionBy: function(arrays, iteratee){
+    var result = []
+    this.transtype(iteratee)
+    letary = this.flattenDeep(arrays).map(it => fun(it))
+    for(let key of array){
+      if(ary.includes(fun(key))){
+        result.push(key)
+      }
+    }
+    return result
+  },
+  intersectionWith: function(array, arrays, comparator){
+    var result = []
+    let ary = this.flattenDeep(arrays)
+    for(let key of array){
+      let arylength = ary.length
+      while(arylength--)
+      if(comparator(key,ary[arylength])){
+        result.includes(key) ? reault : result.push(key)
+      }
+    }
+    return result
+  },
+  join: function(array, separator = ''){
     var res = ''
     for(var i = 0; i < array.length - 1; i++){
-      res = res + array[i] + sep
+      res = res + array[i] + separator
     }
     res += array[array.length-1]
     return res
