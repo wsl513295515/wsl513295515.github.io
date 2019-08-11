@@ -189,6 +189,8 @@ var wsl513295515 = {
     for(var i = fromIndex; i >= 0; i--){
       if(ary[i] == val){
         return i
+      }else if(ary[i] != ary[i] && value != value) {
+        return i
       }
     }
     return -1
@@ -347,8 +349,23 @@ var wsl513295515 = {
   isArrayLikeObject: function(value){
     return this.isArrayLike(value) && this.isObjectLike(value)
   },
-  isEqual: function(value,other){
-
+  isEqual: function(value, other){
+    if(value === other){
+      return true
+    }else if(value != value && other != other){
+      return true
+    }else if(this.isObject(value) && this.isObject(other)){
+      for(key in value){
+        if(value[key] != other[key]){
+          return false
+        }else{
+          this.isEqual(value[key],other[key])
+        }
+      }
+      return true
+    }else{
+      return false
+    }
   },
   isFunction: function(value){
     return Object.prototype.toString.call(value) == '[object Function]'
