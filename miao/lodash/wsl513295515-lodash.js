@@ -563,6 +563,48 @@ var wsl513295515 = {
     })
     return result
   },
+  uniq: function(array){
+    var result = []
+    array.forEach(it =>{
+      if(!result.includes(it)){
+        result.push(it)
+      }
+    })
+    return result
+  },
+  uniqBy: function(array, iteratee){
+    this.transtype(iteratee)
+    var result = []
+    array.forEach(it =>{
+      var temp = true
+      for(var i = 0; i < result.length; i++){
+        if(fun(it) == fun(result[i])){
+          temp = false
+          break
+        }
+      }
+      if(temp){
+        result.push(it)
+      }
+    })
+      return result
+  },
+  uniqWith: function(array, comparator){
+    var result = []
+    array.forEach(it =>{
+      var temp = true
+      for(var i = 0; i < result.length; i++){
+        if(comparator(it,result[i])){
+          temp = false
+          break
+        }
+      }
+      if(temp){
+        result.push(it)
+      }
+    })
+    return result    
+  }
 
 
 
