@@ -517,32 +517,74 @@ var wsl513295515 = {
     }
     return this.take(array,index)
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  union: function(){
-
+  union: function(...array){
+    var ary = [].concat(...array)
+    var result = []
+    ary.forEach(it => {
+      if(!result.includes(it)){
+        result.push(it)
+      }
+    })
+    return result
   },
+  unionBy: function(...arrays){
+    this.transtype(arrays.pop())
+    var ary = this.flattenDeep(arrays)
+    var result = []
+    ary.forEach(it => {
+      var temp = true
+      for(var i = 0; i < result.length; i++){
+        if(fun(it) == fun(result[i])){
+          temp = false
+          break
+        }
+      }
+      if(temp){
+        result.push(it)
+      }
+    })
+    return result
+  },
+  unionWith(...arrays){
+    var fun = arrays.pop()
+    var ary = [].concat(...arrays)
+    var result = []
+    ary.forEach(it =>{
+      var temp = true
+      for(var i = 0; i < result.length; i++){
+        if(fun(it,result[i])){
+          temp = false
+          break
+        }
+      }
+      if(temp){
+        result.push(it)
+      }
+    })
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   flip: function (func) {
     return function(...args) {
       return func(...args.reverse())
