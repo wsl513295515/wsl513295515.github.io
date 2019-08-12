@@ -359,7 +359,33 @@ var wsl513295515 = {
     return low
   },
   sortedIndexOf: function(array, value){
-    return this.sortedIndex(array, value)
+    var low = 0
+    var high = array.length - 1
+    if(value > array[high] || value < array[low]){
+      return -1
+    }
+    while(low < high - 1){
+      var mid = (low + high) >>> 1
+      if(value < array[mid]){
+        high = mid
+      }
+      if(value > array[mid]){
+        low = mid
+      }
+      if(value == array[mid]){
+        while(array[mid - 1] == value){
+          mid--
+        }
+        return mid
+      }
+    }
+    if(value == array[low]){
+      return low
+    }
+    if(value == array[high]){
+      return high
+    }
+    return -1
   },
   sortedLastIndex: function(array, value){
     var low = 0
@@ -413,7 +439,33 @@ var wsl513295515 = {
     return high
   },
   sortedLastIndexOf: function(array, value){
-    return this.sortedLastIndex(array, value)
+    var low = 0
+    var high = array.length - 1
+    if(value > array[high] || value < array[low]){
+      return -1
+    }
+    while(low < high - 1){
+      var mid = (low + high) >>> 1
+      if(value < array[mid]){
+        high = mid
+      }
+      if(value > array[mid]){
+        low = mid
+      }
+      if(value == array[mid]){
+        while(array[mid + 1] == value){
+          mid++
+        }
+        return mid
+      }
+    }
+    if(value == array[low]){
+      return low
+    }
+    if(value == array[high]){
+      return high
+    }
+    return -1
   },
   sortedUniq: function(array){
     var result = []
@@ -436,7 +488,35 @@ var wsl513295515 = {
     }
     return result
   },
-
+  tail: function(array){
+    return array.slice(1)
+  },
+  take: function(array, n = 1){
+    return array.slice(0,n)
+  },
+  takeRight: function(array, n = 1){
+    if(n == 0){
+      return []
+    }
+    return array.slice(-n)
+  },
+  takeRightWhile: function(array, predicate){
+    let index = 0
+    let arraylength = array.length - 1
+    this.transtype(predicate)
+    while(fun(array[arraylength--])){
+      index++
+    }
+    return this.takeRight(array,index)
+  },
+  takeWhile: function(array, predicate){
+    let index = 0
+    this.transtype(predicate)
+    while(fun(array[index])){
+      index++
+    }
+    return this.take(array,index)
+  },
 
 
 
