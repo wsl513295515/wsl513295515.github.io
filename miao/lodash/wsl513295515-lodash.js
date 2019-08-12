@@ -604,7 +604,7 @@ var wsl513295515 = {
       }
     })
     return result    
-  }
+  },
 
 
 
