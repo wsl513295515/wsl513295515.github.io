@@ -605,6 +605,47 @@ var wsl513295515 = {
     })
     return result    
   },
+  unzip: function(array){
+    var result = []
+    for(var i = 0; i < array[0].length; i++){
+      result[i] = []
+      for(var j = 0; j < array.length; j++){
+        result[i][j] = array[j][i]
+      }
+    }
+    return result 
+  },
+  unzipWith(array, iteratee){
+    var result = []
+    var a = []
+    for(var i = 0; i < array[0].length; i++){
+      result[i] = []
+      for(var j = 0; j < array.length; j++){
+        result[i][j] = array[j][i]
+      }
+      a.push(result[i].reduce(iteratee)) 
+    }
+    return a    
+  },
+
+  zip: function(...array){
+    var result = []
+    var l = array.reduce((a,b) => {
+      if(a.length > b.length){
+        return a
+      }
+      return b
+    },0)
+    for(var i = 0; i < l.length; i++){
+      if(!result[i]){
+        result[i] = []
+      }
+      for(var j = 0; j < array.length; j++){
+        result[i].push(array[j][i])
+      }
+    }
+    return result
+  },
 
 
 
@@ -826,6 +867,9 @@ var wsl513295515 = {
     return (isBinary || /^0o[1-7]+$/i.test(value))
      ? parseInt(value.slice(2), isBinary ? 2 : 8)
       : (/^[+-]0x[0-9a-f]+&/i.test(value) ? NaN : +value)
+  },
+  add: function(arg, add = 0){
+    return arg + add
   },
   isNumber: function(value){
     return typeof value == 'number' || (this.isObjectLike(value) && getTag(value) == '[object Number]')

@@ -9,10 +9,12 @@
 <body>
   <script src="wsl513295515-lodash.js"></script>
   <script>
-    console.log(wsl513295515.
+    var zipped = wsl513295515.zip([1, 2], [10, 20], [100, 200])
+    console.log(zipped,wsl513295515.
     
-    uniqBy([{ 'x': 1 }, { 'x': 2 }, { 'x': 1 }], 'x')
     
+    unzipWith(zipped, wsl513295515.add)
+
     )
   </script>
 </body>
