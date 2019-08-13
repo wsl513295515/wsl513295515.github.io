@@ -697,7 +697,7 @@ var wsl513295515 = {
     })
     for(let key in map){
       if(map[key] == 1){
-        result.push(key)
+        result.push(typeof JSON.parse(key) == "object" ? JSON.parse(key) : key)
       }
     }
     return result
