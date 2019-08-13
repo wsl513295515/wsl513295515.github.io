@@ -685,7 +685,7 @@ var wsl513295515 = {
     ary.forEach(it =>{
       var temp = true
       for(let key in map){
-        if(comparator(map[key],(this.isObject(it) ? JSON.stringify(it) : it))){
+        if(comparator(key,(this.isObject(it) ? JSON.stringify(it) : it))){
           temp = false
           map[this.isObject(it) ? JSON.stringify(it) : it] += 1
           break
@@ -697,7 +697,7 @@ var wsl513295515 = {
     })
     for(let key in map){
       if(map[key] == 1){
-        result.push(+key)
+        result.push(key)
       }
     }
     return result
@@ -874,14 +874,14 @@ var wsl513295515 = {
       return true
     }else if(value != value && other != other){
       return true
-    }else if(this.isObject(value) && this.isObject(other)){
+    }else if(wsl513295515.isObject(value) && wsl513295515.isObject(other)){
       var valuekey = Object.keys(value)
       var otherkey = Object.keys(other)
       if(valuekey.length !== otherkey.length){
         return false
       }else{
           for(let key in value){
-            if(this.isEqual(value[key], other[key])){
+            if(wsl513295515.isEqual(value[key], other[key])){
               continue
             }else{
               return false
