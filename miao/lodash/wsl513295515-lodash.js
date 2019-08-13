@@ -627,7 +627,81 @@ var wsl513295515 = {
     }
     return a    
   },
-
+  without: function(...value){
+    var array = value.shift()
+    var result = []
+    var val = [].concat(...value)
+    array.forEach(it => { 
+      if(!val.includes(it)){
+        result.push(it)
+      }
+    })
+    return result
+  },
+  xor: function(...array){
+    var ary = this.flattenDeep(array)
+    var result = []
+    var map = {}
+    ary.forEach(it =>{
+      if(it in map){
+        map[it] += 1
+      }else(
+        map[it] = 1
+      )
+    })
+    for(let key in map){
+      if(map[key] == 1){
+        result.push(+key)
+      }
+    }
+    return result
+  },
+  xorBy: function(...array){
+    var iteratee = array.pop()
+    this.transtype(iteratee)
+    var ary = this.flattenDeep(array)
+    var result = []
+    var map = {}
+    ary.forEach(it =>{
+      if(fun(it) in map){
+        map[fun(it)] += 1
+      }else(
+        map[fun(it)] = 1
+      )
+    })
+    for(let key of ary){
+      if(map[fun(key)] == 1){
+        result.push(key)
+      }
+    }
+    return result
+  },
+  xorWith: function(...array){
+    var comparator = array.pop()
+    this.transtype(comparator)
+    var ary = this.flattenDeep(array)
+    var result = []
+    var map = {}
+    ary.forEach(it =>{
+      var temp = true
+      for(let key in map){
+        if(comparator(map[key],(this.isObject(it) ? JSON.stringify(it) : it))){
+          temp = false
+          map[this.isObject(it) ? JSON.stringify(it) : it] += 1
+          break
+        }
+      }
+      if(temp){
+        map[this.isObject(it) ? JSON.stringify(it) : it] = 1
+      }
+    })
+    for(let key in map){
+      if(map[key] == 1){
+        result.push(+key)
+      }
+    }
+    return result
+  },
   zip: function(...array){
     var result = []
     var l = array.reduce((a,b) => {
